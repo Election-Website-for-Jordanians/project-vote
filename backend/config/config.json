@@ -1,22 +1,22 @@
 {
   "development": {
     "username": "postgres",
-    "password": "12345",
+    "password": "admin1234",
     "database": "electionsSystem",
-    "host": "localhost",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": 12345,
-    "database": "electionSystem",
+    "database": "electionsSystem",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": 12345,
-    "database": "electionSystem",
+    "database": "electionsSystem",
     "host": "localhost",
     "dialect": "postgres"
   }

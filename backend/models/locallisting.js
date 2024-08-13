@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class LocalListing extends Model {
     /**
@@ -10,15 +8,31 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.hasMany(models.Candidates, {
+        foreignKey: "listingID",
+        as: "listingID",
+      });
     }
   }
-  LocalListing.init({
-    Name: DataTypes.STRING,
-    votingCount: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'LocalListing',
-  });
+  LocalListing.init(
+    {
+      listingID: {
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+        type: DataTypes.INTEGER,
+      },
+      Name: DataTypes.STRING,
+      votingCount: DataTypes.INTEGER,
+      didPass: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
+    },
+    {
+      sequelize,
+      modelName: "LocalListing",
+    }
+  );
   return LocalListing;
 };

@@ -12,7 +12,7 @@ module.exports = {
       Name: {
         type: Sequelize.STRING
       },
-      members #: {
+      members: {
         type: Sequelize.INTEGER
       },
       votingCount: {

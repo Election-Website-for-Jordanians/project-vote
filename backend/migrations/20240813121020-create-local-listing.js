@@ -3,11 +3,15 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('LocalListings', {
-      id: {
+      listingID: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
+      },
+      didPass:{
+        type:Sequelize.BOOLEAN,
+        defaultValue:false,
       },
       Name: {
         type: Sequelize.STRING

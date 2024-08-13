@@ -1,40 +1,51 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Candidates', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
+    await queryInterface.createTable("Candidates", {
       profilePicture: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       gender: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       Quota: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       votingCount: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
-      CitizenNationalID: {
-        type: Sequelize.STRING
+      candidateID: {
+        type: Sequelize.STRING,
+        primaryKey: true,
+        allowNull: false,
+        references: {
+          model: "Citizens",
+          key: "NationalID",
+        },
+      },
+      listingID: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "LocalListings",
+          key: "listingID",
+        },
+      },
+      isPresident: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Candidates');
-  }
+    await queryInterface.dropTable("Candidates");
+  },
 };

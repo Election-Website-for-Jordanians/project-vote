@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   PartyListing.init({
     Name: DataTypes.STRING,
-    members #: DataTypes.INTEGER,
+    members : DataTypes.INTEGER,
     votingCount: DataTypes.INTEGER
   }, {
     sequelize,
