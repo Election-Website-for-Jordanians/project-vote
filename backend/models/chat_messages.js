@@ -7,19 +7,12 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
-      this.hasMany(models.Citizen, {
-        foreignKey: "nationalID",
-        as: "user_id",
-      });
-      this.hasMany(models.Admin, {
-        foreignKey: "admin_id",
-        as: "admin_id",
-      });
-    }
+   
   }
   chat_messages.init(
     {
+      user_id:{type:DataTypes.STRING,references:{foreignKey:'nationalID'}},
+      admin_id:{type:DataTypes.STRING,references:{foreignKey:'admin_id'}},
       message: DataTypes.STRING,
       is_admin: DataTypes.BOOLEAN,
     },
@@ -27,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       modelName: "chat_messages",
     }
+    
   );
   return chat_messages;
 };
