@@ -15,11 +15,19 @@ const ProtectedRoute = ({ children }) => {
   }
   return children;
 };
+import SpecifyRequest from "./pages/SpecifyRequest";
+import CheckOutCandidate from "./pages/CheckOutCandidate";
+import CandidatePayment from "./pages/CandidatePayment";
+import Header from "./pages/Header";
 
-const App = () => {
+
+function App() {
+
+
   return (
     <Router>
       <div>
+      <Header/>
         <Routes>
           {/* <Route path="/signup" element={<SignUp />} /> */}
           <Route path="/login" element={<Login />} />
@@ -35,10 +43,18 @@ const App = () => {
             } 
           />
           <Route path="/" element={<Navigate to="/national-id" replace />} />
+                  <Route path="/SpecifyRequest" element={<SpecifyRequest />} />
+          <Route path="/CheckOutCandidate" element={<CheckOutCandidate />} />
+          <Route path="/CandidatePayment" element={<CandidatePayment />} />
         </Routes>
       </div>
     </Router>
   );
 };
+
+  
+  
+
+
 
 export default App;
