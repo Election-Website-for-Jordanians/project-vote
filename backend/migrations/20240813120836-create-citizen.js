@@ -2,6 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
+   
     await queryInterface.createTable("Citizens", {
       nationalID: {
         allowNull: false,
@@ -28,7 +29,7 @@ module.exports = {
       district: {
         type: Sequelize.STRING,
       },
-      otp: {
+      OTP: {
         type: Sequelize.STRING,
       },
     });
