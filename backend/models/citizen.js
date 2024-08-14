@@ -12,13 +12,13 @@ module.exports = (sequelize, DataTypes) => {
   Citizen.init(
     {
       NationalID: { type: DataTypes.STRING, primaryKey: true },
-      Name: DataTypes.STRING,
-      Address: DataTypes.STRING,
-      Email: DataTypes.STRING,
+      name: DataTypes.STRING,
+      email: DataTypes.STRING,
       password: DataTypes.STRING,
       didVoteLocal: DataTypes.BOOLEAN,
       didVoteParty: DataTypes.BOOLEAN,
       district: DataTypes.STRING,
+      otp: DataTypes.STRING,
     },
     {
       sequelize,

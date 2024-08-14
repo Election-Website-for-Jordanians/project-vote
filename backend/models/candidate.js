@@ -8,8 +8,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasOne(models.Citizen, {
+      this.belongsTo(models.Citizen, {
         foreignKey: "NationalID",
+        as: "candidateID",
+      });
+      this.hasMany(models.Advertisment, {
+        foreignKey: "candidateID",
+        as: "advertisorID",
       });
     }
   }
@@ -19,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       gender: { type: DataTypes.STRING, allowNull: false },
       Quota: { type: DataTypes.STRING, allowNull: false },
       votingCount: { type: DataTypes.INTEGER, defaultValue: 0 },
+      isPresident: { type: DataTypes.BOOLEAN, defaultValue: false },
     },
     {
       sequelize,

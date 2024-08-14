@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class ContactMessage extends Model {
     /**
@@ -10,16 +8,26 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.hasMany(models.Citizen, {
+        foreignKey: "nationalID",
+        as: "senderID",
+      });
+      this.hasOne(models.Admin, {
+        foreignKey: "admin_id",
+        as: "admin_id",
+      });
     }
   }
-  ContactMessage.init({
-    message: DataTypes.STRING,
-    sentFrom: DataTypes.INTEGER,
-    AdminID: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'ContactMessage',
-  });
+  ContactMessage.init(
+    {
+      message: DataTypes.STRING,
+      sentFrom: DataTypes.INTEGER,
+      AdminID: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "ContactMessage",
+    }
+  );
   return ContactMessage;
 };

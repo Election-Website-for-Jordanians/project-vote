@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "migrate":"npx sequelize-cli db:migrate",
+    "start":"nodemon server.js",
+    "undo":"npx sequelize-cli db:migrate:undo",
+    "undo-all":"npx sequelize-cli db:migrate:undo:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -21,6 +25,7 @@
     "sequelize": "^6.37.3"
   },
   "devDependencies": {
+    "sequelize-auto-migrations": "^1.0.3",
     "sequelize-cli": "^6.6.2"
   }
 }
