@@ -21,15 +21,26 @@ module.exports = {
         allowNull: false,
         references: {
           model: "Citizens",
-          key: "NationalID",
+          key: "nationalID",
         },
       },
-      listingID: {
+      localListingID: {
         type: Sequelize.INTEGER,
         references: {
           model: "LocalListings",
           key: "listingID",
         },
+      },
+      partylistingID: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "PartyListings",
+          key: "partyID",
+        },
+      },
+      listingType: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       isPresident: {
         type: Sequelize.BOOLEAN,

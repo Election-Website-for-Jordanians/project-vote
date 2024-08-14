@@ -2,25 +2,31 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Advertisments", {
-      advertismentID: {
+    await queryInterface.createTable("chat_messages", {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      pictuer: {
+      message: {
         type: Sequelize.STRING,
       },
-      title: {
-        type: Sequelize.STRING,
+      is_admin: {
+        type: Sequelize.BOOLEAN,
       },
-
-      advertisorID: {
+      user_id: {
         type: Sequelize.STRING,
         references: {
-          model: "Candidates",
-          key: "candidateID",
+          model: "Citizens",
+          key: "nationalID",
+        },
+      },
+      admin_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Admins",
+          key: "admin_id",
         },
       },
       createdAt: {
@@ -34,6 +40,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Advertisments");
+    await queryInterface.dropTable("chat_messages");
   },
 };

@@ -1,46 +1,39 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Citizens', {
-      
-      NationalID: {
+    await queryInterface.createTable("Citizens", {
+      nationalID: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
-      Name: {
-        type: Sequelize.STRING
+      name: {
+        type: Sequelize.STRING,
       },
-      Address: {
-        type: Sequelize.STRING
-      },
-      Email: {
-        type: Sequelize.STRING
+      email: {
+        type: Sequelize.STRING,
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       didVoteLocal: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue:false
       },
       didVoteParty: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue:false
       },
       district: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      otp: {
+        type: Sequelize.STRING,
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Citizens');
-  }
+    await queryInterface.dropTable("Citizens");
+  },
 };

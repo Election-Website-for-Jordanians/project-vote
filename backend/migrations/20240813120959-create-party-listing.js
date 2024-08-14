@@ -3,7 +3,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('PartyListings', {
-      id: {
+      partyID: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
