@@ -19,16 +19,16 @@ module.exports = {
       },
       didVoteLocal: {
         type: Sequelize.BOOLEAN,
-        defaultValue:false
+        defaultValue: false,
       },
       didVoteParty: {
         type: Sequelize.BOOLEAN,
-        defaultValue:false
+        defaultValue: false,
       },
       district: {
         type: Sequelize.STRING,
       },
-      otp: {
+      OTP: {
         type: Sequelize.STRING,
       },
     });
