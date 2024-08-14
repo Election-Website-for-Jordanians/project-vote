@@ -28,7 +28,7 @@ module.exports = {
       district: {
         type: Sequelize.STRING,
       },
-      otp: {
+      OTP: {
         type: Sequelize.STRING,
       },
     });

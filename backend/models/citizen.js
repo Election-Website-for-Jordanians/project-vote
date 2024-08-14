@@ -11,19 +11,21 @@ module.exports = (sequelize, DataTypes) => {
   }
   Citizen.init(
     {
-      NationalID: { type: DataTypes.STRING, primaryKey: true },
+      nationalID: { type: DataTypes.STRING, primaryKey: true },
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       password: DataTypes.STRING,
       didVoteLocal: DataTypes.BOOLEAN,
       didVoteParty: DataTypes.BOOLEAN,
       district: DataTypes.STRING,
-      otp: DataTypes.STRING,
+      OTP: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: "Citizen",
+      timestamps: false, // Disable automatic createdAt and updatedAt columns
     }
   );
+  
   return Citizen;
 };
