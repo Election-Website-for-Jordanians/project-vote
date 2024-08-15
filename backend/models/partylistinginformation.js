@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         references: { model: "PartyListing", key: "partyID" },
       },
+      profilePicture: { type: DataTypes.STRING },
     },
     {
       sequelize,

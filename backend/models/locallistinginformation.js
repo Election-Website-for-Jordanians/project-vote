@@ -20,7 +20,13 @@ module.exports = (sequelize, DataTypes) => {
 
       gender: DataTypes.STRING,
       candidacyCourse: DataTypes.STRING,
-      localListingID: {type:DataTypes.INTEGER,references:{model:"LocalListings",key:"listingID"}},
+      localListingID: {
+        type: DataTypes.INTEGER,
+        references: { model: "LocalListings", key: "listingID" },
+      },
+      votingCount: { type: DataTypes.INTEGER, defaultValue: 0 },
+      profilePicture:{type:DataTypes.STRING}
+
     },
     {
       sequelize,
