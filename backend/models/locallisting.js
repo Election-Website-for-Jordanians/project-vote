@@ -1,16 +1,12 @@
+// models/LocalListing.js
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class LocalListing extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       this.hasMany(models.Candidate, {
-        foreignKey: "listingID"
-        
+        foreignKey: "localListingID", // Ensure this matches the Candidate model
+        as: "candidates" // Define the alias used in the query
       });
     }
   }
@@ -18,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       listingID: {
         primaryKey: true,
-        autoIncrement: true,
         allowNull: false,
         type: DataTypes.INTEGER,
       },

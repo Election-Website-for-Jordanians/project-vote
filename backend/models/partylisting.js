@@ -1,29 +1,35 @@
 "use strict";
 const { Model } = require("sequelize");
+
 module.exports = (sequelize, DataTypes) => {
   class PartyListing extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       this.hasMany(models.Candidate, {
-        foreignKey: "partyID",
-        as: "partyID",
+        foreignKey: "partylistingID", // Ensure this matches the Candidate model
+        as: "candidates" // Define the alias used in the query
       });
     }
   }
+
   PartyListing.init(
     {
+      partyID: {
+        primaryKey: true,
+        allowNull: false,
+        type: DataTypes.INTEGER,
+      },
       Name: DataTypes.STRING,
-      members: DataTypes.INTEGER,
       votingCount: DataTypes.INTEGER,
+      didPass: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
     },
     {
       sequelize,
       modelName: "PartyListing",
     }
   );
+
   return PartyListing;
 };

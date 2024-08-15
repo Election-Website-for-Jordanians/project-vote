@@ -3,6 +3,8 @@ const cors = require("cors");
 const userRoutes = require('./routes/usersroutes.js');
 const chatRoutes = require('./routes/chatroutes.js');
 const authRoutes = require('./routes/authroutes.js');
+const adminRoutes = require('./routes/adminroutes');
+
 
 const app = express();
 
@@ -20,6 +22,8 @@ app.use((req, res, next) => {
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/admin", adminRoutes);
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {

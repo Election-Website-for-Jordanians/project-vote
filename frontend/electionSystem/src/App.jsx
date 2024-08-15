@@ -6,6 +6,10 @@ import ChatPopup from './components/chatpopup';
 import NationalIdForm from './components/nationalidform';
 import OTPForm from './components/otpform';
 import UserDataForm from './components/userdataform';
+import AdminDashboard from './components/admindashboard'; // Import the new components
+import Overview from './components/otpform';
+import UserManagement from './components/usermangment';
+import ElectionManagement from './components/electionmanagment';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -21,6 +25,7 @@ const App = () => {
     <Router>
       <div>
         <Routes>
+          {/* Existing routes */}
           {/* <Route path="/signup" element={<SignUp />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/national-id" element={<NationalIdForm />} />
@@ -35,6 +40,12 @@ const App = () => {
             } 
           />
           <Route path="/" element={<Navigate to="/national-id" replace />} />
+          
+          {/* New routes */}
+          <Route path="/admin-dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/overview" element={<ProtectedRoute><Overview /></ProtectedRoute>} />
+          <Route path="/user-management" element={<ProtectedRoute><UserManagement /></ProtectedRoute>} />
+          <Route path="/election-management" element={<ProtectedRoute><ElectionManagement /></ProtectedRoute>} />
         </Routes>
       </div>
     </Router>
