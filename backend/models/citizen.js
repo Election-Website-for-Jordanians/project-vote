@@ -19,6 +19,8 @@ module.exports = (sequelize, DataTypes) => {
       didVoteParty: DataTypes.BOOLEAN,
       district: DataTypes.STRING,
       OTP: DataTypes.STRING,
+      isPresident: { type: DataTypes.BOOLEAN, defaultValue: false },
+      isCandidate: { type: DataTypes.BOOLEAN, defaultValue: false },
     },
     {
       sequelize,
@@ -26,6 +28,6 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false, // Disable automatic createdAt and updatedAt columns
     }
   );
-  
+
   return Citizen;
 };
