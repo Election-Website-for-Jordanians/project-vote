@@ -15,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
       admin_id:{type:DataTypes.STRING,references:{foreignKey:'admin_id'}},
       message: DataTypes.STRING,
       is_admin: DataTypes.BOOLEAN,
+      user_id:DataTypes.STRING,
+      admin_id:DataTypes.STRING
     },
     {
       sequelize,
