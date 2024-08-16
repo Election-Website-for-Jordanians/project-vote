@@ -1,4 +1,4 @@
-const {advertisment} = require('../models');
+const advertisment = require('../models/advertisment');
 const jwt = require('jsonwebtoken');
 const { JWT_SECRET } = require('../config/jwtconfig');
 require('dotenv').config();

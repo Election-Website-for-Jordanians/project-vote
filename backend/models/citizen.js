@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       OTP: DataTypes.STRING,
       isPresident: { type: DataTypes.BOOLEAN, defaultValue: false },
       isCandidate: { type: DataTypes.BOOLEAN, defaultValue: false },
+      phoneNumber:{type:DataTypes.STRING}
     },
     {
       sequelize,
