@@ -1,5 +1,4 @@
 const {advertisment} = require('../models');
-const bodyParser = require('body-parser'); // Move this to the top
 const jwt = require('jsonwebtoken');
 const { JWT_SECRET } = require('../config/jwtconfig');
 require('dotenv').config();
@@ -48,8 +47,11 @@ exports.RequestAdvertisement = async (req, res) => {
 // ********end Request Advertisement
 
 exports.getAdvertisement = async (req, res) => {
+  console.log("hi2");
   try {
+    console.log("hi");
     const advertisment = await advertisment.findAll();
+    console.log(advertisment);
     res.json(advertisment);
   } catch (error) {
     res.status(400).json({ error: error.message });

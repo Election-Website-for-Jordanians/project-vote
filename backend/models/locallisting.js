@@ -8,10 +8,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasMany(models.Candidate, {
-        foreignKey: "listingID"
+      // this.hasMany(models.Candidate, {
+      //   foreignKey: "listingID"
         
-      });
+      // });
     }
   }
   LocalListing.init(

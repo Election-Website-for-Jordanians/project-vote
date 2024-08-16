@@ -17,8 +17,13 @@ module.exports = (sequelize, DataTypes) => {
       pictuer: DataTypes.STRING,
       title: DataTypes.STRING,
       votingCount: DataTypes.INTEGER,
-      CandidateID: DataTypes.INTEGER,
+      advertisorID: {
+        type: DataTypes.INTEGER,
+        references: { model: "Citizens", key: "nationalID" },
+      },
       description: DataTypes.STRING,
+      isApproved:{type:DataTypes.BOOLEAN},
+      
     },
     {
       sequelize,

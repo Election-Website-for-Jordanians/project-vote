@@ -4,13 +4,13 @@ const advertising = require('./routes/advertising.js');
 const userRoutes = require('./routes/usersroutes.js');
 const chatRoutes = require('./routes/chatroutes.js');
 const authRoutes = require('./routes/authroutes.js');
-
+const bodyParser = require('body-parser'); 
 const app = express();
 
 // Middleware
+app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
-
 // Logging middleware
 app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
