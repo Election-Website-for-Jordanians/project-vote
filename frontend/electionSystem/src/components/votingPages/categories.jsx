@@ -24,11 +24,19 @@ function CategoriesListing() {
         }
       );
       console.log(response.data);
-      if (response.data.district === "ZA") {
+      const district = response.data.district;
+      console.log(district);
+      if (district === "ZA") {
         // If district is ZA, navigate to GovernorateAndDistrict
         navigate("/components/votingPages/GovernorateAndDistrict");
+      } else if (district === "A1") {
+        // If district is A1, navigate to GovernorateAndDistrict1
+        navigate("/components/votingPages/GovernorateAndDistrict1");
+      } else if (district === "A2") {
+        // If district is A2, navigate to GovernorateAndDistrict2
+        navigate("/components/votingPages/GovernorateAndDistrict2");
       } else {
-        // Handle case where district is not ZA
+        // Handle case where district is neither ZA, A1, nor A2
         alert("You are not allowed to access this page.");
       }
     } catch (error) {

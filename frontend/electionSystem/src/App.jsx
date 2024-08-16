@@ -29,6 +29,8 @@ import Header from "./pages/Header";
 import CategoriesListing from "./components/votingPages/categories";
 import GovernorateAndDistrict from "./components/votingPages/GovernorateAndDistrict";
 import LocalListing from "./components/votingPages/LocalListing";
+import GovernorateAndDistrict1 from "./components/votingPages/GovernorateAndDistrict1";
+import GovernorateAndDistrict2 from "./components/votingPages/GovernorateAndDistrict2";
 
 function App() {
   return (
@@ -69,6 +71,14 @@ function App() {
           <Route
             path="/components/votingPages/LocalListing"
             element={<LocalListing />}
+          />
+          <Route
+            path="/components/votingPages/GovernorateAndDistrict1"
+            element={<GovernorateAndDistrict1 />}
+          />
+          <Route
+            path="/components/votingPages/GovernorateAndDistrict2"
+            element={<GovernorateAndDistrict2 />}
           />
         </Routes>
       </div>
