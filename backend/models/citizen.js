@@ -23,9 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Citizen",
-      timestamps: false, // Disable automatic createdAt and updatedAt columns
     }
   );
-  
+
   return Citizen;
 };

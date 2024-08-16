@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt"); // For hashing passwords
 const jwt = require("jsonwebtoken"); // For generating JWTs
-const { Citizen } = require('../models');
+const { Citizen } = require("../models/citizen");
 const { JWT_SECRET } = require("../config/jwtconfig");
 
 // Commented out signup method
@@ -29,17 +29,16 @@ const { JWT_SECRET } = require("../config/jwtconfig");
 exports.login = async (req, res) => {
   try {
     const { nationalID, password } = req.body;
-console.log(Citizen);
-    // Find the user in the database
+    console.log("consol:", req.body);
     const user = await Citizen.findOne({ where: { nationalID: nationalID } });
-   
+    console.log(user);
     if (user) {
       // Compare the provided password with the hashed password
       if (await bcrypt.compare(password, user.password)) {
         const token = jwt.sign(
           { id: user.nationalID, username: user.name },
           JWT_SECRET,
-          { expiresIn: '1h' }
+          { expiresIn: "1h" }
         );
 
         res.json({ token });
@@ -50,7 +49,7 @@ console.log(Citizen);
       res.status(400).json({ error: "User not found" });
     }
   } catch (error) {
-    console.error('Error in login:', error);
+    console.error("Error in login:");
     res.status(500).json({ error: error.message });
   }
 };

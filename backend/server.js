@@ -1,11 +1,12 @@
 const express = require("express");
 const cors = require("cors");
-const userRoutes = require('./routes/usersroutes.js');
-const chatRoutes = require('./routes/chatroutes.js');
-const authRoutes = require('./routes/authroutes.js');
-
+const userRoutes = require("./routes/usersroutes.js");
+const chatRoutes = require("./routes/chatroutes.js");
+const authRoutes = require("./routes/authroutes.js");
+//district
 const app = express();
-
+const bodyParser = require("body-parser"); //body-parser module is a middleware that helps parse incoming request bodies in a middleware before your handlers, available under the req.body property.
+const districtRoutes = require("./routes/districtRoutes.js");
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -24,11 +25,19 @@ app.use("/api/auth", authRoutes);
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(`${new Date().toISOString()} - Error:`, err);
-  res.status(500).json({ success: false, message: 'Internal server error', error: err.message });
+  res.status(500).json({
+    success: false,
+    message: "Internal server error",
+    error: err.message,
+  });
 });
+
+//district middleware
+app.use(bodyParser.json());
+app.use("/api/district", districtRoutes);
 
 const PORT = process.env.PORT || 4026;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log('Environment variables:', process.env);
+  console.log("Environment variables:", process.env);
 });

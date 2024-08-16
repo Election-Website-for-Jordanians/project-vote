@@ -1,51 +1,67 @@
-import React, { useState } from 'react';
-import axios from '../components/axios';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "../components/axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    nationalID: '',  // Updated to match Citizen model's NationalID field
-    password: ''     // No change needed here
+    nationalID: "", // Updated to match Citizen model's NationalID field
+    password: "", // No change needed here
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const sharedStyles = {
-    pageContainer: "flex justify-center items-center min-h-screen bg-gray-100 p-4",
-    formContainer: "bg-white p-8 rounded-lg shadow-lg w-full max-w-md border border-gray-200",
+    pageContainer:
+      "flex justify-center items-center min-h-screen bg-gray-100 p-4",
+    formContainer:
+      "bg-white p-8 rounded-lg shadow-lg w-full max-w-md border border-gray-200",
     title: "text-3xl font-bold mb-6 text-center text-gray-800",
-    input: "w-full p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition duration-300 mb-4",
-    button: "w-full bg-[#DA2A29] text-white p-3 rounded-md hover:bg-red-600 transition duration-300 font-semibold text-lg shadow-md",
+    input:
+      "w-full p-3 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition duration-300 mb-4",
+    button:
+      "w-full bg-[#DA2A29] text-white p-3 rounded-md hover:bg-red-600 transition duration-300 font-semibold text-lg shadow-md",
     errorText: "text-red-500 text-center mb-4",
     linkText: "mt-6 text-center text-gray-600",
-    link: "text-[#DA2A29] hover:underline font-semibold"
+    link: "text-[#DA2A29] hover:underline font-semibold",
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     try {
-      console.log('Attempting login with:', formData);
-      const response = await axios.post('http://localhost:4026/api/users/login', formData);
-      console.log('Login response:', response.data);
+      console.log("Attempting login with:", formData);
+      localStorage.setItem("nationalID", formData.nationalID); // Find the user in the database
+
+      const response = await axios.post(
+        "http://localhost:4026/api/users/login",
+        formData
+      );
+      console.log("Login response:", response.data);
       if (response.data.token) {
-        localStorage.setItem('token', response.data.token);
-        console.log('Token stored, navigating to /chat');
-        navigate('/chat');
-        console.log('Navigation called');
+        localStorage.setItem("token", response.data.token);
+        console.log("Token stored, navigating to /chat");
+        navigate("/components/votingPages/categories");
+        console.log("Navigation called");
       } else {
-        setError('Login failed: No token received');
+        setError("Login failed: No token received");
       }
     } catch (error) {
-      console.error('Error during login:', error.response ? error.response.data : error.message);
-      setError(error.response ? error.response.data.error : 'An error occurred during login');
+      console.error(
+        "Error during login:",
+        error.response ? error.response.data : error.message
+      );
+      setError(
+        error.response
+          ? error.response.data.error
+          : "An error occurred during login"
+      );
     }
   };
 
@@ -56,11 +72,16 @@ const Login = () => {
         {error && <p className={sharedStyles.errorText}>{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="nationalID" className="block text-sm font-medium text-gray-700 mb-1">رقم الهوية الوطنية</label>
+            <label
+              htmlFor="nationalID"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              رقم الهوية الوطنية
+            </label>
             <input
               id="nationalID"
               type="text"
-              name="nationalID"  // Updated to match Citizen model's NationalID field
+              name="nationalID" // Updated to match Citizen model's NationalID field
               value={formData.nationalID}
               onChange={handleChange}
               placeholder="أدخل رقم الهوية الوطنية"
@@ -69,7 +90,12 @@ const Login = () => {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">كلمة المرور</label>
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              كلمة المرور
+            </label>
             <input
               id="password"
               type="password"

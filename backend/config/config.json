@@ -4,21 +4,20 @@
 
     "password": "12345",
 
-
     "database": "electionsSystem",
     "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "1234Ss",
+    "password": "12345",
     "database": "electionsSystem",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "1234Ss",
+    "password": "12345",
     "database": "electionsSystem",
     "host": "localhost",
     "dialect": "postgres"
