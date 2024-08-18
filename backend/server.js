@@ -1,8 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const path = require('path');
+const http = require('http');
+const socketIo = require('socket.io');
 const advertising = require('./routes/advertising.js');
 const userRoutes = require('./routes/usersroutes.js');
+const adminRoutes = require('./routes/adminroutes');
 const chatRoutes = require('./routes/chatroutes.js');
 const authRoutes = require('./routes/authroutes.js');
 const partyRoutes = require('./routes/partyRoutes'); //duaa
@@ -12,6 +15,15 @@ const LocalList = require('./routes/LocalList.js');const adminRoutes = require('
 
 
 const app = express();
+
+const server = http.createServer(app);
+const io = socketIo(server, {
+  cors: {
+    origin: "*", // Be more specific in production
+    methods: ["GET", "POST"]
+  }
+});
+
 require("dotenv").config();
 //for districts 
 const districtRoutes = require('./routes/districtRoutes');//district duaa
@@ -35,10 +47,25 @@ app.use((req, res, next) => {
   next();
 });
 
+// Make io accessible to our router
+app.set('io', io);
+
+// WebSocket connection handling
+io.on('connection', (socket) => {
+  console.log('New client connected');
+  
+  socket.on('disconnect', () => {
+    console.log('Client disconnected');
+  });
+});
+
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/admin", adminRoutes);
+
+
 app.use("/api/advertising", advertising);
 app.use('/api', advertising);
 app.use('/api/LocalList', LocalList);

@@ -58,6 +58,10 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 0,
 
       },
+      didPass: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
       isApproved: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,

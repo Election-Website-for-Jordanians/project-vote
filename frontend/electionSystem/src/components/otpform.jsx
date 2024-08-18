@@ -7,7 +7,7 @@ const OTPForm = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
-  const { nationalID } = location.state;
+  const { nationalID, verificationType } = location.state;
 
   const sharedStyles = {
     pageContainer: "flex justify-center items-center min-h-screen bg-gray-100 p-4",
@@ -24,7 +24,7 @@ const OTPForm = () => {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post('/api/auth/verify-otp', { nationalID, OTP });
+      const response = await axios.post('/api/auth/verify-otp', { nationalID, OTP, verificationType });
       if (response.data.success) {
         navigate('/user-data', { state: { user: response.data.user } });
       }
@@ -38,20 +38,17 @@ const OTPForm = () => {
     <div className={sharedStyles.pageContainer}>
       <div className={sharedStyles.formContainer}>
         <h2 className={sharedStyles.title}>تحقق من رمز OTP</h2>
-        <p className="mb-6 text-center text-gray-600">رقم الهوية الوطنية: <span className="font-semibold">{nationalID}</span></p>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="OTP" className="block text-sm font-medium text-gray-700 mb-1">رمز المرور المؤقت</label>
-            <input
-              id="OTP"
-              type="text"
-              value={OTP}
-              onChange={(e) => setOtp(e.target.value)}
-              placeholder="أدخل الرمز الذي تم إرساله إلى بريدك الإلكتروني"
-              className={sharedStyles.input}
-              required
-            />
-          </div>
+        <p>رقم الهوية الوطنية: {nationalID}</p>
+        <p>طريقة التحقق: {verificationType === 'email' ? 'البريد الإلكتروني' : 'رقم الهاتف'}</p>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={OTP}
+            onChange={(e) => setOtp(e.target.value)}
+            placeholder={`أدخل الرمز الذي تم إرساله إلى ${verificationType === 'email' ? 'بريدك الإلكتروني' : 'رقم هاتفك'}`}
+            className={sharedStyles.input}
+            required
+          />
           <button type="submit" className={sharedStyles.button}>
             تحقق من OTP
           </button>
