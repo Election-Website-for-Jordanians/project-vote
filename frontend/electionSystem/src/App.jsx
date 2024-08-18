@@ -6,11 +6,14 @@ import {
 } from "react-router-dom";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 // import SignUp from './components/signup';
-import Login from "./components/login";
-import ChatPopup from "./components/chatpopup";
-import NationalIdForm from "./components/nationalidform";
-import OTPForm from "./components/otpform";
-import UserDataForm from "./components/userdataform";
+import Login from './components/login';
+import ChatPopup from './components/chatpopup';
+import NationalIdForm from './components/nationalidform';
+import OTPForm from './components/otpform';
+import UserDataForm from './components/userdataform';
+import Privacy from './pages/Privacy';
+import AdvertisementPopup from './sharedComponants/AdvertisementPopup';
+
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -25,46 +28,49 @@ import SpecifyRequest from "./pages/SpecifyRequest";
 import CheckOutCandidate from "./pages/CheckOutCandidate";
 import CandidatePayment from "./pages/CandidatePayment";
 import Header from "./pages/Header";
-import { ContextProvider } from "./components/contextprovider./contextProvider";
-import { ThemeProvider } from "@material-tailwind/react";
-import { ViewerStream } from "./components/streamComponent/ViewerStream/ViewerStream";
+
+import AddLocalList from './pages/AddLocalList';
+import LocalOrParty from './pages/LocalOrParty';
+import AddPartyList from './pages/AddPartyList';
+
+
 function App() {
   return (
-    <ThemeProvider>
-      <ContextProvider>
-        <Router>
-          <Routes>
-            <Route path="/" element={<BackStageStream />} />
-            <Route path="/viewer" element={<ViewerStream />}></Route>
-          </Routes>
-        </Router>
-      </ContextProvider>
-    </ThemeProvider>
-    // <Router>
-    //   <div>
-    //   <Header/>
-    //     <Routes>
-
-    //       <Route path="/login" element={<Login />} />
-    //       <Route path="/national-id" element={<NationalIdForm />} />
-    //       <Route path="/otp" element={<OTPForm />} />
-    //       <Route path="/user-data" element={<UserDataForm />} />
-    //       <Route
-    //         path="/chat"
-    //         element={
-    //           <ProtectedRoute>
-    //             <ChatPopup />
-    //           </ProtectedRoute>
-    //         }
-    //       />
-    //       <Route path="/" element={<Navigate to="/national-id" replace />} />
-    //               <Route path="/SpecifyRequest" element={<SpecifyRequest />} />
-    //       <Route path="/CheckOutCandidate" element={<CheckOutCandidate />} />
-    //       <Route path="/CandidatePayment" element={<CandidatePayment />} />
-    //     </Routes>
-    //   </div>
-    // </Router>
+    <Router>
+      <div>
+      <Header/>
+        <Routes>
+          {/* <Route path="/signup" element={<SignUp />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/national-id" element={<NationalIdForm />} />
+          <Route path="/otp" element={<OTPForm />} />
+          <Route path="/user-data" element={<UserDataForm />} />
+          <Route 
+            path="/chat" 
+            element={
+              <ProtectedRoute>
+                <ChatPopup />
+              </ProtectedRoute>
+            } 
+          />
+          <Route path="/" element={<Navigate to="/national-id" replace />} />
+                  <Route path="/SpecifyRequest" element={<SpecifyRequest />} />
+          <Route path="/CheckOutCandidate" element={<CheckOutCandidate />} />
+          <Route path="/CandidatePayment" element={<CandidatePayment />} />
+          <Route path="/Privacy" element={<Privacy />} />
+          <Route path="/AdvertisementPopup" element={<AdvertisementPopup />} />
+          <Route path="/AddLocalList" element={<AddLocalList />} />
+          <Route path="/LocalOrParty" element={<LocalOrParty />} />
+          <Route path="/AddPartyList" element={<AddPartyList />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
+
+  
+  
+
+
 
 export default App;
