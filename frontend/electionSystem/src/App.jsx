@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 // import SignUp from './components/signup';
 import Login from './components/login';
@@ -7,6 +7,12 @@ import NationalIdForm from './components/nationalidform';
 import OTPForm from './components/otpform';
 import UserDataForm from './components/userdataform';
 
+import AdminDashboard from './pages/AdminDashboard';
+import Overview from './pages/Overview';
+import UserManagement from './pages/UserManagement';
+import ElectionManagement from './pages/ElectionManagement';
+
+// import VotingPercentage from './components/VotingPercentage'; 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('token');
@@ -34,6 +40,11 @@ function App() {
           <Route path="/national-id" element={<NationalIdForm />} />
           <Route path="/otp" element={<OTPForm />} />
           <Route path="/user-data" element={<UserDataForm />} />
+
+          <Route path="/" element={<AdminDashboard />} />
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/user-management" element={<UserManagement />} />
+        <Route path="/election-management" element={<ElectionManagement />} />
           <Route 
             path="/chat" 
             element={

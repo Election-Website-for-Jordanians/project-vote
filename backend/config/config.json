@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
 
-    "password": "12345",
+    "password": "duaa123321",
 
 
     "database": "electionsSystem",
@@ -11,14 +11,14 @@
   },
   "test": {
     "username": "postgres",
-    "password": "1234Ss",
+    "password": "duaa123321",
     "database": "electionsSystem",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "1234Ss",
+    "password": "duaa123321",
     "database": "electionsSystem",
     "host": "localhost",
     "dialect": "postgres"
