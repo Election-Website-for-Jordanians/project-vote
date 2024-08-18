@@ -5,9 +5,14 @@ const advertising = require('./routes/advertising.js');
 const userRoutes = require('./routes/usersroutes.js');
 const chatRoutes = require('./routes/chatroutes.js');
 const authRoutes = require('./routes/authroutes.js');
-const bodyParser = require('body-parser'); 
+const partyRoutes = require('./routes/partyRoutes'); //duaa
+// const userRoutes = require('./routes/userdataRoutes.js'); //duaa
+const userdata = require ('./routes/userdataRoutes.js')//duaaconst bodyParser = require('body-parser'); 
 const LocalList = require('./routes/LocalList.js');
 const app = express();
+require("dotenv").config();
+//for districts 
+const districtRoutes = require('./routes/districtRoutes');//district duaa
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
@@ -39,7 +44,10 @@ app.use('/api/LocalList', LocalList);
 // جعل مجلد uploads قابلاً للوصول من المتصفح
 app.use('/images', express.static(path.join(__dirname, 'images')));
 /*******end image******* */
-
+// إعداد الـ routes server
+app.use('/votingresult', partyRoutes);//duaa
+app.use('/test', userdata);//duaa
+app.use('/api', districtRoutes); //duaadistrict
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(`${new Date().toISOString()} - Error:`, err);
@@ -50,3 +58,6 @@ app.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
   console.log('Environment variables:', process.env);
 });
+
+
+
