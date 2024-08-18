@@ -1,7 +1,6 @@
 const nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
 const { Citizen } = require('../models')
-
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
