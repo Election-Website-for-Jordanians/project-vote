@@ -6,6 +6,8 @@ import ChatPopup from './components/chatpopup';
 import NationalIdForm from './components/nationalidform';
 import OTPForm from './components/otpform';
 import UserDataForm from './components/userdataform';
+import Privacy from './pages/Privacy';
+import AdvertisementPopup from './sharedComponants/AdvertisementPopup';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -19,7 +21,9 @@ import SpecifyRequest from "./pages/SpecifyRequest";
 import CheckOutCandidate from "./pages/CheckOutCandidate";
 import CandidatePayment from "./pages/CandidatePayment";
 import Header from "./pages/Header";
-
+import AddLocalList from './pages/AddLocalList';
+import LocalOrParty from './pages/LocalOrParty';
+import AddPartyList from './pages/AddPartyList';
 
 function App() {
 
@@ -46,6 +50,12 @@ function App() {
                   <Route path="/SpecifyRequest" element={<SpecifyRequest />} />
           <Route path="/CheckOutCandidate" element={<CheckOutCandidate />} />
           <Route path="/CandidatePayment" element={<CandidatePayment />} />
+          <Route path="/Privacy" element={<Privacy />} />
+          <Route path="/AdvertisementPopup" element={<AdvertisementPopup />} />
+          <Route path="/AddLocalList" element={<AddLocalList />} />
+          <Route path="/LocalOrParty" element={<LocalOrParty />} />
+          <Route path="/AddPartyList" element={<AddPartyList />} />
+
         </Routes>
       </div>
     </Router>
