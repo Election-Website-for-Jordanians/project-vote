@@ -1,12 +1,25 @@
-// src/components/ChatPopup.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import axios from '../components/axios';
+import io from 'socket.io-client';
 
 const ChatPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const chatBoxRef = useRef(null);
+  const socketRef = useRef();
+
+  useEffect(() => {
+    socketRef.current = io('http://localhost:4026'); 
+
+    socketRef.current.on('new message', (newMessage) => {
+      setMessages((prevMessages) => [...prevMessages, newMessage]);
+    });
+
+    return () => {
+      socketRef.current.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -37,11 +50,10 @@ const ChatPopup = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('/api/chat/messages', 
+      await axios.post('/api/chat/messages', 
         { message: inputMessage },
-       {headers: { Authorization: `Bearer ${token}` }
-    });
-      setMessages([...messages, response.data]);
+        { headers: { Authorization: `Bearer ${token}` }}
+      );
       setInputMessage('');
     } catch (error) {
       console.error('Error sending message:', error);

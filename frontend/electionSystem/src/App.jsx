@@ -11,6 +11,10 @@ import ChatPopup from './components/chatpopup';
 import NationalIdForm from './components/nationalidform';
 import OTPForm from './components/otpform';
 import UserDataForm from './components/userdataform';
+import AdminDashboard from './components/admindashboard'; // Import the new components
+import Overview from './components/otpform';
+import UserManagement from './components/usermangment';
+import ElectionManagement from './components/electionmanagment';
 
 import AdminDashboard from './pages/AdminDashboard';
 import Overview from './pages/Overview';
@@ -43,6 +47,7 @@ function App() {
       <div>
       <Header/>
         <Routes>
+          {/* Existing routes */}
           {/* <Route path="/signup" element={<SignUp />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/national-id" element={<NationalIdForm />} />
@@ -65,6 +70,12 @@ function App() {
                   <Route path="/SpecifyRequest" element={<SpecifyRequest />} />
           <Route path="/CheckOutCandidate" element={<CheckOutCandidate />} />
           <Route path="/CandidatePayment" element={<CandidatePayment />} />
+          
+          {/* New routes */}
+          <Route path="/admin-dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/overview" element={<ProtectedRoute><Overview /></ProtectedRoute>} />
+          <Route path="/user-management" element={<ProtectedRoute><UserManagement /></ProtectedRoute>} />
+          <Route path="/election-management" element={<ProtectedRoute><ElectionManagement /></ProtectedRoute>} />
           <Route path="/Privacy" element={<Privacy />} />
           <Route path="/AdvertisementPopup" element={<AdvertisementPopup />} />
           <Route path="/AddLocalList" element={<AddLocalList />} />

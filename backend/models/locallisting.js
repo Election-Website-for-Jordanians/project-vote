@@ -48,7 +48,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       listingID: {
         primaryKey: true,
-        autoIncrement: true,
         allowNull: false,
         type: DataTypes.INTEGER,
       },
@@ -58,6 +57,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         defaultValue: 0,
 
+      },
+      didPass: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
       isApproved: {
         type: DataTypes.BOOLEAN,
