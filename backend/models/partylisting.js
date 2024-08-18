@@ -3,12 +3,12 @@ const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   class PartyListing extends Model {
-    static associate(models) {
-      this.hasMany(models.Candidate, {
-        foreignKey: "partylistingID", // Ensure this matches the Candidate model
-        as: "candidates" // Define the alias used in the query
-      });
-    }
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {}
   }
 
   PartyListing.init(
