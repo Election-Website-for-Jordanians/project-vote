@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
         references: { model: "Citizens", key: "nationalID" },
       },
       description: DataTypes.STRING,
-      isApproved:{type:DataTypes.BOOLEAN},
-      
+      isApproved: { type: DataTypes.BOOLEAN },
+      isPaid: { type: DataTypes.BOOLEAN },
     },
     {
       sequelize,
