@@ -7,60 +7,51 @@ import Cards from "../assets/images/cards.jpg";
 function SpecifyRequest(){
 
     return(
-        <div>
+      <div className="min-h-screen px-4 py-12 bg-gray-100 font-amiri sm:px-6 lg:px-8 text-end">
+      <div className="mx-auto max-w-7xl">
+        <h1 className="text-4xl font-bold text-center text-[#CE1126] mb-12">اختر نوع الطلب</h1>
+        
+        <div className="grid gap-8 md:grid-cols-2">
+          {/* بطاقة طلب المناظرة */}
+          <Link to="/CheckOutCandidate" className="group">
+            <div className="overflow-hidden transition-transform duration-300 transform bg-white rounded-lg shadow-lg hover:scale-105">
+              <div className="relative h-64">
+                <img src={Cards} alt="المناظرة" className="object-cover w-full h-full" />
+                <div className="absolute inset-0 transition-opacity duration-300 bg-black bg-opacity-40 group-hover:bg-opacity-30"></div>
+              </div>
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold text-[#007A3D] mb-2">طلب المناظرة</h2>
+                <p className="text-gray-600">قدم طلبك للمشاركة في المناظرات وعبر عن آرائك!</p>
+                <div className="mt-4">
+                  <span className="inline-block bg-[#CE1126] text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors duration-300 hover:bg-[#A50E1F]">
+                    تقديم الطلب
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
 
-
-        <div className="flex flex-wrap justify-center gap-10 my-20 space-x-10">
-
-<Link to="/CheckOutCandidate">
-
-<div
-  className="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700 py-40">
-  <div
-    className={`absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url(${Cards})] bg-cover bg-clip-border bg-center text-gray-700 shadow-none`}>
-    <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/80 via-black/50"></div>
-  </div>
-  <div className="relative p-6 px-6 py-14 md:px-12">
-    <h2 className="mb-6 block font-sans text-4xl font-medium leading-[1.5] tracking-normal text-white antialiased">
-احصل على فرصة للتعبير عن آرائك! قدم طلبك للمشاركة في المناظرات 
-    </h2>
-   
-    {/* <img alt="Tania Andrew"
-      src={debates}
-      className="relative inline-block h-[74px] w-[74px] !rounded-full border-2 border-white object-cover object-center" /> */}
-  </div>
-</div> 
-</Link>
-
-
-
-<Link to="/CheckOutCandidate">
-
-<div
-  className="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700 py-40">
-  <div
-    className={`absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url(${Cards})] bg-cover bg-clip-border bg-center text-gray-700 shadow-none`}>
-    <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/80 via-black/50"></div>
-  </div>
-  <div className="relative p-6 px-6 py-14 md:px-12">
-    <h2 className="mb-6 block font-sans text-4xl font-medium leading-[1.5] tracking-normal text-white antialiased">
-    قم بتقديم طلبك الآن لنشر إعلانك وحقق أقصى استفادة من وصولك إلى الجمهور المستهدف!  
-      </h2>
-    
-    
-    {/* <img alt="Tania Andrew"
-      src={debates}
-      className="relative inline-block h-[74px] w-[74px] !rounded-full border-2 border-white object-cover object-center" /> */}
-  </div>
-</div> 
-</Link>
-
+          {/* بطاقة طلب الإعلان */}
+          <Link to="/CheckOutCandidate" className="group">
+            <div className="overflow-hidden transition-transform duration-300 transform bg-white rounded-lg shadow-lg hover:scale-105">
+              <div className="relative h-64">
+                <img src={Cards} alt="الإعلان" className="object-cover w-full h-full" />
+                <div className="absolute inset-0 transition-opacity duration-300 bg-black bg-opacity-40 group-hover:bg-opacity-30"></div>
+              </div>
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold text-[#007A3D] mb-2">طلب الإعلان</h2>
+                <p className="text-gray-600">قدم طلبك لنشر إعلانك وحقق أقصى استفادة من وصولك للجمهور!</p>
+                <div className="mt-4">
+                  <span className="inline-block bg-[#CE1126] text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors duration-300 hover:bg-[#A50E1F]">
+                    تقديم الطلب
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
-{/* <div className="w-full">
-  <img src={flag} alt="" />
-</div> */}
-        </div>
-
+      </div>
+    </div>
     );
 
 }

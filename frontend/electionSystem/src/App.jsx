@@ -1,5 +1,10 @@
-
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import "@stream-io/video-react-sdk/dist/css/styles.css";
 // import SignUp from './components/signup';
 import Login from './components/login';
 import ChatPopup from './components/chatpopup';
@@ -15,21 +20,24 @@ import ElectionManagement from './pages/ElectionManagement';
 // import VotingPercentage from './components/VotingPercentage'; 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   if (!token) {
     return <Navigate to="/login" replace />;
   }
   return children;
 };
+import BackStageStream from "./components/streamComponent/BackstageStream";
 import SpecifyRequest from "./pages/SpecifyRequest";
 import CheckOutCandidate from "./pages/CheckOutCandidate";
 import CandidatePayment from "./pages/CandidatePayment";
 import Header from "./pages/Header";
 
+import AddLocalList from './pages/AddLocalList';
+import LocalOrParty from './pages/LocalOrParty';
+import AddPartyList from './pages/AddPartyList';
+
 
 function App() {
-
-
   return (
     <Router>
       <div>
@@ -57,6 +65,11 @@ function App() {
                   <Route path="/SpecifyRequest" element={<SpecifyRequest />} />
           <Route path="/CheckOutCandidate" element={<CheckOutCandidate />} />
           <Route path="/CandidatePayment" element={<CandidatePayment />} />
+          <Route path="/Privacy" element={<Privacy />} />
+          <Route path="/AdvertisementPopup" element={<AdvertisementPopup />} />
+          <Route path="/AddLocalList" element={<AddLocalList />} />
+          <Route path="/LocalOrParty" element={<LocalOrParty />} />
+          <Route path="/AddPartyList" element={<AddPartyList />} />
         </Routes>
       </div>
     </Router>

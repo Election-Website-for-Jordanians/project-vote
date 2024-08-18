@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+
 module.exports = (sequelize, DataTypes) => {
   class Advertisment extends Model {
     /**
@@ -8,17 +9,38 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      this.belongsTo(models.Citizen, {
+        foreignKey: 'advertisorID',
+        targetKey: 'nationalID',
+        as: 'advertiser' // الاسم الذي ستستخدمه للوصول إلى العلاقة
+      });
+    }    
   }
   Advertisment.init(
     {
-      advertismentID: DataTypes.INTEGER,
-      pictuer: DataTypes.STRING,
+      
+
+
+        advertismentID: {
+          type: DataTypes.INTEGER,
+          primaryKey: true,  // تحديد هذا العمود كمفتاح أساسي
+          autoIncrement: true, // تعيين تلقائي للزيادة إذا لزم الأمر
+        },  
+
+           pictuer: DataTypes.STRING,
       title: DataTypes.STRING,
-      votingCount: DataTypes.INTEGER,
-      CandidateID: DataTypes.INTEGER,
+      // votingCount: DataTypes.INTEGER,
+      advertisorID: {
+        type: DataTypes.INTEGER,
+        references: { model: "Citizens", key: "nationalID" },
+      },
       description: DataTypes.STRING,
+      isApproved:{
+        type:DataTypes.BOOLEAN,
+        defaultValue: false
+
+      },
+      
     },
     {
       sequelize,
