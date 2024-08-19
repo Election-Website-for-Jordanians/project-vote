@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -6,14 +5,9 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-
-
-
-
 import Home from "./Pages/Home";
 import HeaderM from "./Components/HeaderM";
 import Footer from "./Components/Footer";
-
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 // import SignUp from './components/signup';
 import Login from './components/login';
@@ -27,14 +21,17 @@ import ChatBot from './components/chatbot';
 import UserMessages from './pages/usermessages';
 import AdvertisementPopup from "./sharedComponants/AdvertisementPopup";
 import Privacy from "./pages/Privacy";
-import AdminDashboard from './pages/AdminDashboard';
-import Overview from './pages/Overview';
-import UserManagement from './pages/UserManagement';
-import ElectionManagement from './pages/ElectionManagement';
+import AdminDashboard from "./pages/AdminDashboard";
+import Overview from "./pages/Overview";
+import UserManagement from "./pages/UserManagement";
+import ElectionManagement from "./pages/ElectionManagement";
 import AdvertisementPopup from "./sharedComponants/AdvertisementPopup";
-
-// import VotingPercentage from './components/VotingPercentage';
-// Protected Route Component
+import SpecifyRequest from "./pages/SpecifyRequest";
+import CheckOutCandidate from "./pages/CheckOutCandidate";
+import CandidatePayment from "./pages/CandidatePayment";
+import AddLocalList from "./pages/AddLocalList";
+import LocalOrParty from "./pages/LocalOrParty";
+import AddPartyList from "./pages/AddPartyList";
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("token");
   if (!token) {
