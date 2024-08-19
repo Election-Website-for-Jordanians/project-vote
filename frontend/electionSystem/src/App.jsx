@@ -11,11 +11,12 @@ import ChatPopup from './components/chatpopup';
 import NationalIdForm from './components/nationalidform';
 import OTPForm from './components/otpform';
 import UserDataForm from './components/userdataform';
-
+import Privacy from "./pages/Privacy";
 import AdminDashboard from './pages/AdminDashboard';
 import Overview from './pages/Overview';
 import UserManagement from './pages/UserManagement';
 import ElectionManagement from './pages/ElectionManagement';
+import AdvertisementPopup from "./sharedComponants/AdvertisementPopup";
 
 // import VotingPercentage from './components/VotingPercentage'; 
 // Protected Route Component
