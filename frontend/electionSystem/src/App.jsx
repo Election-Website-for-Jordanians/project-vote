@@ -28,10 +28,13 @@ import Header from "./pages/Header";
 // Voting Pages
 import CategoriesListing from "./components/votingPages/categories";
 import GovernorateAndDistrict from "./components/votingPages/GovernorateAndDistrict";
-import LocalListing from "./components/votingPages/LocalListing";
 import GovernorateAndDistrict1 from "./components/votingPages/GovernorateAndDistrict1";
 import GovernorateAndDistrict2 from "./components/votingPages/GovernorateAndDistrict2";
-
+import LocalListing from "./components/votingPages/LocalListing";
+import LocalListing1 from "./components/votingPages/LocalListing1";
+import LocalListing2 from "./components/votingPages/LocalListing2";
+import PartyVoting from "./components/votingPages/partyListing";
+import Thresholds from "./components/votingPages/ThresholdsCalculate";
 function App() {
   return (
     <Router>
@@ -79,6 +82,22 @@ function App() {
           <Route
             path="/components/votingPages/GovernorateAndDistrict2"
             element={<GovernorateAndDistrict2 />}
+          />
+          <Route
+            path="/components/votingPages/LocalListing1"
+            element={<LocalListing1 />}
+          />
+          <Route
+            path="/components/votingPages/LocalListing2"
+            element={<LocalListing2 />}
+          />
+          <Route
+            path="/components/votingPages/partyListing"
+            element={<PartyVoting />}
+          />
+          <Route
+            path="/components/votingPages/ThresholdsCalculate"
+            element={<Thresholds />}
           />
         </Routes>
       </div>

@@ -7,6 +7,14 @@ const authRoutes = require("./routes/authroutes.js");
 const app = express();
 const bodyParser = require("body-parser"); //body-parser module is a middleware that helps parse incoming request bodies in a middleware before your handlers, available under the req.body property.
 const districtRoutes = require("./routes/districtRoutes.js");
+const localListingRoutes = require("./routes/localListingRoutes.js");
+const localListingRoutes1 = require("./routes/localListingRoutes1.js");
+const localListingRoutes2 = require("./routes/localListingRoutes2.js");
+const voteRoutes = require("./routes/voteRoutes.js");
+const partyRoutes = require("./routes/partyRoutes.js");
+//
+const thresholdsRouter = require("./routes/thresholds.js");
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -35,6 +43,13 @@ app.use((err, req, res, next) => {
 //district middleware
 app.use(bodyParser.json());
 app.use("/api/district", districtRoutes);
+app.use("/api/local-listings", localListingRoutes);
+app.use("/api/local-listings1", localListingRoutes1);
+app.use("/api/local-listings2", localListingRoutes2);
+
+app.use("/api", voteRoutes);
+app.use("/api", partyRoutes);
+app.use("/api", thresholdsRouter);
 
 const PORT = process.env.PORT || 4026;
 app.listen(PORT, () => {

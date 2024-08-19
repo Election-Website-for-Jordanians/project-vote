@@ -10,7 +10,7 @@ function GovernorateAndDistrict1() {
         </div>
         <div className="avatar online">
           <div className="w-40 rounded-full border-solid border-2">
-            <Link to="/components/votingPages/LocalListing">
+            <Link to="/components/votingPages/LocalListing1">
               <img src="https://images.alwatanvoice.com/news/images/3875497563.jpg" />
             </Link>
           </div>

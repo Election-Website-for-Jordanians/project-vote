@@ -10,7 +10,7 @@ function GovernorateAndDistrict2() {
         </div>
         <div className="avatar online">
           <div className="w-40 rounded-full border-solid border-2">
-            <Link to="/components/votingPages/LocalListing">
+            <Link to="/components/votingPages/LocalListing2">
               <img src="https://www.alquds.co.uk/wp-content/uploads/2022/05/shutterstock_1342192166-730x438.jpg " />
             </Link>
           </div>

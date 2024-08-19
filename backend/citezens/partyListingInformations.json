@@ -1,0 +1,182 @@
+[
+  {
+    "partyInformationID": 1,
+    "nationalID": "1029384756",
+    "gender": "Female",
+    "candidacyCourse": "Course A",
+    "partyListingID": 1,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 2,
+    "nationalID": "1029384756",
+    "gender": "Female",
+    "candidacyCourse": "Course B",
+    "partyListingID": 1,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 3,
+    "nationalID": "3948576212",
+    "gender": "Female",
+    "candidacyCourse": "Course B",
+    "partyListingID": 1,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 4,
+    "nationalID": "2938471950",
+    "gender": "Female",
+    "candidacyCourse": "Course B",
+    "partyListingID": 2,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 5,
+    "nationalID": "0987654321",
+    "gender": "Male",
+    "candidacyCourse": "Course B",
+    "partyListingID": 2,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 6,
+    "nationalID": "7584936203",
+    "gender": "Female",
+    "candidacyCourse": "Course B",
+    "partyListingID": 2,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 7,
+    "nationalID": "3344556678",
+    "gender": "Male",
+    "candidacyCourse": "Course B",
+    "partyListingID": 3,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 8,
+    "nationalID": "4455667789",
+    "gender": "Male",
+    "candidacyCourse": "Course B",
+    "partyListingID": 3,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 9,
+    "nationalID": "5566778890",
+    "gender": "Male",
+    "candidacyCourse": "Course B",
+    "partyListingID": 3,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 10,
+    "nationalID": "6677889901",
+    "gender": "Male",
+    "candidacyCourse": "Course B",
+    "partyListingID": 4,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 11,
+    "nationalID": "7788990012",
+    "gender": "Male",
+    "candidacyCourse": "Course B",
+    "partyListingID": 4,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 12,
+    "nationalID": "8899001123",
+    "gender": "Male",
+    "candidacyCourse": "Course B",
+    "partyListingID": 4,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 13,
+    "nationalID": "9900112234",
+    "gender": "Male",
+    "candidacyCourse": "Course B",
+    "partyListingID": 5,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 14,
+    "nationalID": "0011223345",
+    "gender": "Male",
+    "candidacyCourse": "Course B",
+    "partyListingID": 5,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 15,
+    "nationalID": "1122334457",
+    "gender": "Female",
+    "candidacyCourse": "Course B",
+    "partyListingID": 5,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 16,
+    "nationalID": "2233445568",
+    "gender": "Female",
+    "candidacyCourse": "Course B",
+    "partyListingID": 6,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 17,
+    "nationalID": "3344556679",
+    "gender": "Female",
+    "candidacyCourse": "Course B",
+    "partyListingID": 6,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  },
+  {
+    "partyInformationID": 15,
+    "nationalID": "4455667790",
+    "gender": "Female",
+    "candidacyCourse": "Course B",
+    "partyListingID": 6,
+    "createdAt": "2024-08-18T00:00:00Z",
+    "updatedAt": "2024-08-18T00:00:00Z",
+    "profilePicture": ""
+  }
+]

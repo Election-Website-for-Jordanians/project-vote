@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-function GovernorateAndDistrict() {
+function GovernorateAndDistrict1() {
   return (
     <>
       <div className="flex  justify-around mt-16">
@@ -9,9 +9,12 @@ function GovernorateAndDistrict() {
           </div>
         </div>
         <div className="avatar online">
-          <div className="w-40 rounded-full border-solid border-2">
-            <Link to="/components/votingPages/LocalListing">
-              <img src="https://th.bing.com/th/id/OIP._fduhwle2i1Y7x6SrIQitgHaHa?rs=1&pid=ImgDetMain" />
+          <div className="w-40 rounded-full border-solid border-2 ">
+            <Link
+              to="/components/votingPages/LocalListing "
+              className="bg-contain"
+            >
+              <img src="https://albaladnews.net/assets/2024-05-12/images/58_news_1715502523.jpg" />
             </Link>
           </div>
         </div>
@@ -109,4 +112,4 @@ function GovernorateAndDistrict() {
     </>
   );
 }
-export default GovernorateAndDistrict;
+export default GovernorateAndDistrict1;

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 function CategoriesListing() {
   const navigate = useNavigate();
 
@@ -56,10 +56,12 @@ function CategoriesListing() {
             <br />
           </p>
           <br />
-          <p className="border-solid border-4 p-2 w-96 h-16 flex justify-center items-center mr-52 mt-10 font-bold">
-            القوائم الحزبية
-            <br />
-          </p>
+          <Link to="/components/votingPages/partyListing">
+            <p className="border-solid border-4 p-2 w-96 h-16 flex justify-center items-center mr-52 mt-10 font-bold">
+              القوائم الحزبية
+              <br />
+            </p>
+          </Link>
         </div>
         <div className="row-start-1 row-end-3 col-start-2 col-end-3 mt-40 mr-28 w-full">
           <img
