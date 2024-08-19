@@ -5,11 +5,12 @@ const advertising = require('./routes/advertising.js');
 const userRoutes = require('./routes/usersroutes.js');
 const chatRoutes = require('./routes/chatroutes.js');
 const authRoutes = require('./routes/authroutes.js');
-const bodyParser = require('body-parser'); 
+// const bodyParser = require('body-parser'); 
 const LocalList = require('./routes/LocalList.js');
 const app = express();
 // Middleware
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(express.json())
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
