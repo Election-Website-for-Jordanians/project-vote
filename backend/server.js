@@ -7,7 +7,8 @@ const jwt = require('jsonwebtoken');
 
 const advertising = require('./routes/advertising.js');
 const userRoutes = require('./routes/usersroutes.js');
-const adminRoutes = require('./routes/adminroutes');
+const bodyParser=require("body-parser");
+
 const chatRoutes = require('./routes/chatroutes.js');
 const authRoutes = require('./routes/authroutes.js');
 const partyRoutes = require('./routes/partyRoutes');
@@ -106,7 +107,7 @@ io.on('connection', (socket) => {
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
-app.use("/api/auth", authRoutes);
+// app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/advertising", advertising);
 app.use('/api', advertising);

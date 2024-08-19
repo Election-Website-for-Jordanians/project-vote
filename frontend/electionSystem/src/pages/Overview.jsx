@@ -230,8 +230,7 @@ const Overview = () => {
         <DistrictVotingPercentage districtName="ZA" votes={districtVotes['ZA']} />
         <DistrictVotingPercentage districtName="A1" votes={districtVotes['A1']} />
         <DistrictVotingPercentage districtName="A2" votes={districtVotes['A2']} />
-        {/* <CirclePercentage percentage={65} title="المنطقة ب" subtitle="المناطق الضواحي" />
-        <CirclePercentage percentage={55} title="المنطقة ج" subtitle="المناطق الريفية" /> */}
+       
       </div>
 
       <div className="flex flex-col items-center space-y-4 mt-8">
