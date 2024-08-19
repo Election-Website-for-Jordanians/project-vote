@@ -45,7 +45,7 @@ const Login = () => {
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
         console.log("Token stored, navigating to /chat");
-        navigate("/chat");
+        navigate("/Home");
         console.log("Navigation called");
       } else {
         setError("Login failed: No token received");
