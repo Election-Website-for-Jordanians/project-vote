@@ -15,7 +15,10 @@ const userdata = require('./routes/userdataRoutes.js');
 const LocalList = require('./routes/LocalList.js');
 const districtRoutes = require('./routes/districtRoutes.js');
 
+const debateRoutes=require("./routes/debateRoutes.js");
+
 const { chat_messages } = require('./models');
+
 
 const app = express();
 const server = http.createServer(app);
@@ -109,9 +112,13 @@ app.use("/api/advertising", advertising);
 app.use('/api', advertising);
 app.use('/api/LocalList', LocalList);
 app.use('/images', express.static(path.join(__dirname, 'images')));
+
+
+app.use("/api/debates",debateRoutes)
 app.use('/votingresult', partyRoutes);
 app.use('/test', userdata);
 app.use('/api', districtRoutes);
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
