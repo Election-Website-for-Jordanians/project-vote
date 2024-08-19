@@ -158,7 +158,7 @@ exports.createPayment = async (req, res) => {
 /**************update advertisment to confirm the payment process************ */
 exports.updateAdvertisment = async (req, res) => {
   const { id } = req.params;
-  const { isApproved } = req.body;
+  const { isPaid } = req.body;
 
   try {
     const advertisment = await Advertisment.findByPk(id);
@@ -168,7 +168,7 @@ exports.updateAdvertisment = async (req, res) => {
     }
 
     // Update the task details
-    advertisment.isApproved = isApproved;
+    advertisment.isPaid = isPaid;
     await advertisment.save();
 
     res.json(advertisment);

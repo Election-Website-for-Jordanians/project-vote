@@ -38,9 +38,9 @@ function CandidatePayment() {
         paymentMethodId: paymentMethod.id,
       });
 
-      // تحديث الإعلان ليصبح `isApproved: true`
+      // تحديث الإعلان ليصبح `isPaid: true`
       await axios.put(`http://localhost:4026/api/updateAdvertisment/${advertismentID}`, {
-        isApproved: true,
+        isPaid: true,
       });
 
       setSuccessMessage('تمت العملية بنجاح وتمت الموافقة على الإعلان!');

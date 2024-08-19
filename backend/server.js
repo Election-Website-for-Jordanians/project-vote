@@ -10,8 +10,10 @@ const userRoutes = require('./routes/usersroutes.js');
 const adminRoutes = require('./routes/adminroutes');
 const chatRoutes = require('./routes/chatroutes.js');
 const authRoutes = require('./routes/authroutes.js');
+
 const partyRoutes = require('./routes/partyRoutes');
 const userdata = require('./routes/userdataRoutes.js');
+
 const LocalList = require('./routes/LocalList.js');
 const districtRoutes = require('./routes/districtRoutes.js');
 
@@ -31,7 +33,9 @@ const io = socketIo(server, {
 
 require("dotenv").config();
 
-// Middleware
+
+app.use(express.json())
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
