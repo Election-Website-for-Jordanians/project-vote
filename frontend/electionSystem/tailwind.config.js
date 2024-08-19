@@ -5,6 +5,8 @@ module.exports = withMT({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+<<<<<<< HEAD
+=======
 
       spacing: {
         6: '1.5rem',
@@ -60,6 +62,7 @@ module.exports = withMT({
       fontFamily: {
         amiri: ['Amiri', 'sans-serif'],
 
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
       keyframes: {
         animatedgradient: {
           "0%": { backgroundPosition: "0% 50%" },
@@ -72,7 +75,10 @@ module.exports = withMT({
       },
       animation: {
         gradient: "animatedgradient 6s ease infinite alternate",
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
       },
     },
   },

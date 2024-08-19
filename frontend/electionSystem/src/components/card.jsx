@@ -65,6 +65,8 @@ const Card = ({ title, value, subtitle, icon }) => (
 );
 
 export default Card;
+<<<<<<< HEAD
+=======
 
 // import React from 'react';
 
@@ -91,4 +93,5 @@ export default Card;
 //     {children}
 //   </h2>
 // );
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
 

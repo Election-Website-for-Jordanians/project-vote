@@ -62,6 +62,15 @@ const DistrictVotingPercentage = ({ districtName }) => {
   }
 
   return (
+<<<<<<< HEAD
+    <div>
+      <h2>الزرقاء {districtName}</h2>
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        <p>{percentage !== null ? `${percentage.toFixed(2)}%` : 'Loading...'}</p>
+      )}
+=======
     <>
     <div className="flex justify-center">
       <CirclePercentage 
@@ -71,6 +80,7 @@ const DistrictVotingPercentage = ({ districtName }) => {
       />
 
       
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
     </div>
     </>
   );

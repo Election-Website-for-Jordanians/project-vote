@@ -464,6 +464,10 @@ const Overview = () => {
         <DistrictVotingPercentage districtName="ZA" votes={districtVotes['ZA']} />
         <DistrictVotingPercentage districtName="A1" votes={districtVotes['A1']} />
         <DistrictVotingPercentage districtName="A2" votes={districtVotes['A2']} />
+<<<<<<< HEAD
+       
+=======
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
       </div>
       
       <div className="flex flex-col items-center space-y-4 mt-8">

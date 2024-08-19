@@ -71,10 +71,15 @@ const jwt = require('jsonwebtoken');
 const advertising = require('./routes/advertising.js');
 
 const userRoutes = require('./routes/usersroutes.js');
-const adminRoutes = require('./routes/adminroutes');
+const bodyParser=require("body-parser");
+
 const chatRoutes = require('./routes/chatroutes.js');
+<<<<<<< HEAD
+// const authRoutes = require('./routes/authroutes.js');
+=======
 const authRoutes = require('./routes/authroutes.js');
 
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
 const partyRoutes = require('./routes/partyRoutes'); //duaa
 // const userRoutes = require('./routes/userdataRoutes.js'); //duaa
 const userdata = require ('./routes/userdataRoutes.js')//duaa
@@ -185,6 +190,9 @@ io.on('connection', (socket) => {
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
+<<<<<<< HEAD
+// app.use("/api/auth", authRoutes);
+=======
 app.use("/api/auth", authRoutes);
 
 // إعداد الـ routes server
@@ -192,6 +200,7 @@ app.use('/votingresult', partyRoutes);//duaa party
 app.use('/test', userdata);//duaa userdata
 app.use('/api', districtRoutes); //duaadistrict
 
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
 app.use("/api/admin", adminRoutes);
 app.use("/api/advertising", advertising);
 app.use('/api', advertising);

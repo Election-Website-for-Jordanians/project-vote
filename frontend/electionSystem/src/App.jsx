@@ -21,6 +21,14 @@ import ChatPopup from './components/chatpopup';
 import NationalIdForm from './components/nationalidform';
 import OTPForm from './components/otpform';
 import UserDataForm from './components/userdataform';
+<<<<<<< HEAD
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
+// import ChatBot from './components/chatbot';
+
+import UserMessages from './pages/usermessages';
+import AdvertisementPopup from "./sharedComponants/AdvertisementPopup";
+=======
 
 import ChatBot from './components/chatbot';
 
@@ -28,6 +36,7 @@ import ChatBot from './components/chatbot';
 import UserMessages from './pages/usermessages';
 import AdvertisementPopup from "./sharedComponants/AdvertisementPopup";
 
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
 import Privacy from "./pages/Privacy";
 import AdminDashboard from './pages/AdminDashboard';
 import Overview from './pages/Overview';
@@ -48,13 +57,18 @@ const ProtectedRoute = ({ children }) => {
 import SpecifyRequest from "./pages/SpecifyRequest";
 import CheckOutCandidate from "./pages/CheckOutCandidate";
 import CandidatePayment from "./pages/CandidatePayment";
+<<<<<<< HEAD
+ import HeaderM from "./components/HeaderM";
+=======
 
 import Header from "./Pages/Header";
 
 
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
 import AddLocalList from './pages/AddLocalList';
 import LocalOrParty from './pages/LocalOrParty';
 import AddPartyList from './pages/AddPartyList';
+import Debates from "./pages/Debates";
 
 
 
@@ -63,8 +77,12 @@ function App() {
     <>
     <Router>
       <div>
+<<<<<<< HEAD
+      <HeaderM/>
+=======
         <Header />
         <HeaderM />
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
         <Routes>
           {/* Existing routes */}
           {/* <Route path="/signup" element={<SignUp />} /> */}
@@ -72,6 +90,8 @@ function App() {
           <Route path="/national-id" element={<NationalIdForm />} />
           <Route path="/otp" element={<OTPForm />} />
           <Route path="/user-data" element={<UserDataForm />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/Debates" element={<Debates />} />
 
           <Route path="/home" element={<Home />} />
          
@@ -105,11 +125,19 @@ function App() {
           <Route path="/AddLocalList" element={<AddLocalList />} />
           <Route path="/LocalOrParty" element={<LocalOrParty />} />
           <Route path="/AddPartyList" element={<AddPartyList />} />
+<<<<<<< HEAD
+  
+        </Routes>
+      </div>
+    </Router>
+            <Footer/>
+=======
           <Route path="/chatbot" element={<ChatBot />} />
         </Routes>
       </div>
     </Router>
     <Footer/>
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
     </>
   );
 }
