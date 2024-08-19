@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import CirclePercentage from './CirclePercentage'; // تأكد أن هذا المسار صحيح، بناءً على مكان وجود مكون CirclePercentage في مشروعك
+import CirclePercentage from '../components/CirclePercentage'; // تأكد أن هذا المسار صحيح، بناءً على مكان وجود مكون CirclePercentage في مشروعك
 
 const VotingPercentage = () => {
   const [percentage, setPercentage] = useState(null);
@@ -30,3 +30,35 @@ const VotingPercentage = () => {
 };
 
 export default VotingPercentage;
+//------------------------------------------------------------------------------------------------------
+// const VotingPercentage = () => {
+//   const percentages = [
+//     { percentage: 75, title: 'الحزبية', subtitle: 'نسبة الأحزاب' },
+//     { percentage: 50, title: 'المحلية 1', subtitle: 'نسبة محلية 1' },
+//     { percentage: 60, title: 'المحلية 2', subtitle: 'نسبة محلية 2' },
+//   ];
+
+//   return (
+//     <div className="space-y-8">
+//       {/* الدائرة الأولى تظهر في سطر منفصل */}
+//       <div className="flex justify-center">
+//         <CirclePercentage
+//           percentage={percentages[0].percentage}
+//           title={percentages[0].title}
+//           subtitle={percentages[0].subtitle}
+//         />
+//       </div>
+//       {/* الدوائر الثلاث الأخرى تظهر على سطر واحد */}
+//       <div className="flex justify-around">
+//         {percentages.slice(1).map((item, index) => (
+//           <CirclePercentage
+//             key={index}
+//             percentage={item.percentage}
+//             title={item.title}
+//             subtitle={item.subtitle}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };

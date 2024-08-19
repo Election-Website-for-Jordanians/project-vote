@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
           autoIncrement: true, // تعيين تلقائي للزيادة إذا لزم الأمر
         },  
 
-           pictuer: DataTypes.STRING,
+      pictuer: DataTypes.STRING,
       title: DataTypes.STRING,
       // votingCount: DataTypes.INTEGER,
       advertisorID: {
@@ -39,8 +39,14 @@ module.exports = (sequelize, DataTypes) => {
         type:DataTypes.BOOLEAN,
         defaultValue: false
 
+      },isPaid: {
+        type:DataTypes.BOOLEAN,
+        defaultValue: false
       },
-      
+      isPaid:{
+        type:DataTypes.BOOLEAN,
+        defaultValue: false
+      }
     },
     {
       sequelize,

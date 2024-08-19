@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       debateTitle: DataTypes.STRING,
       debateDescription: DataTypes.STRING,
-      viewerToken: DataTypes.STRING,
+      
       dateOfDebate: DataTypes.STRING,
       isApproved: { type: DataTypes.BOOLEAN, defaultValue: false },
     },

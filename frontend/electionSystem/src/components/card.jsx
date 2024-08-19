@@ -65,4 +65,33 @@ const Card = ({ title, value, subtitle, icon }) => (
 );
 
 export default Card;
+<<<<<<< HEAD
+=======
+
+// import React from 'react';
+
+// export const Card = ({ children }) => (
+//   <div className="border rounded-lg shadow-md p-4 bg-white">
+//     {children}
+//   </div>
+// );
+
+// export const CardHeader = ({ children, className }) => (
+//   <div className={`border-b pb-2 mb-2 ${className}`}>
+//     {children}
+//   </div>
+// );
+
+// export const CardContent = ({ children }) => (
+//   <div className="pt-2">
+//     {children}
+//   </div>
+// );
+
+// export const CardTitle = ({ children, className }) => (
+//   <h2 className={`text-lg font-semibold ${className}`}>
+//     {children}
+//   </h2>
+// );
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
 

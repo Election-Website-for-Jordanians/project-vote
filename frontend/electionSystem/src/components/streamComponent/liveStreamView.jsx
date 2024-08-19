@@ -9,7 +9,11 @@ import {
 } from "@stream-io/video-react-sdk";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 import { useContext, useEffect } from "react";
+<<<<<<< HEAD
 // import { Context } from "../contextprovider./contextProvider";
+=======
+
+>>>>>>> 8878683407942b887a8a606a8f1bbc7710f8f842
 import { Button } from "@material-tailwind/react";
 import startButton from "./assets/start.png";
 import stopButton from "./assets/stop.png";
