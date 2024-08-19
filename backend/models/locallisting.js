@@ -49,6 +49,7 @@ module.exports = (sequelize, DataTypes) => {
       listingID: {
         primaryKey: true,
         allowNull: false,
+        autoIncrement: true,
         type: DataTypes.INTEGER,
       },
       Name: DataTypes.STRING,

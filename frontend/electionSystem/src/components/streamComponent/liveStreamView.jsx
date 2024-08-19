@@ -9,7 +9,7 @@ import {
 } from "@stream-io/video-react-sdk";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 import { useContext, useEffect } from "react";
-import { Context } from "../contextprovider/contextProvider";
+
 import { Button } from "@material-tailwind/react";
 import startButton from "./assets/start.png";
 import stopButton from "./assets/stop.png";

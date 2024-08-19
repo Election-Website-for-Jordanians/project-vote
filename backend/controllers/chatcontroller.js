@@ -10,6 +10,7 @@ const chatController = {
         order: [['createdAt', 'ASC']],
       });
       
+      console.log('Fetched messages for user', nationalID, ':', messages);
       res.json(messages);
     } catch (error) {
       console.error('Error in getMessages:', error);
@@ -29,9 +30,11 @@ const chatController = {
         is_admin: isAdmin,
       });
 
-      // Emit the new message to all connected clients
-      req.app.get('io').emit('new message', newMessage);
+      // Emit the new message to the specific user's room and admin room
+      req.app.get('io').to(nationalID).emit('new message', newMessage);
+      req.app.get('io').to('admin').emit('new message', newMessage);
 
+      console.log('New message created and emitted:', newMessage);
       res.json(newMessage);
     } catch (error) {
       console.error('Error in sendMessage:', error);

@@ -22,7 +22,7 @@ router.get('/users', getAllUsers);
 // مسار لتحديث البريد الإلكتروني لمستخدم معين باستخدام nationalID
 router.put('/api/users/:nationalID', updateUserEmail); //اول سي بالباث من السيرفر app.use('/test', userdata);//duaa /test
 // مسار لجلب إحصاءات التصويت
-router.get('/voting-stats', getVotingStats);
+// router.get('/voting-stats', getVotingStats);
 
 // router.put('/api/users/:nationalID', async (req, res) => {
 //     try {
