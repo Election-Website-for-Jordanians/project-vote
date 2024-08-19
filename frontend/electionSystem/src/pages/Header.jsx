@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function header(){
+function Header(){
 
     return(
     <header className="relative z-50">
@@ -51,4 +51,4 @@ function header(){
     
     );
     }
-    export default header;
+    export default Header;

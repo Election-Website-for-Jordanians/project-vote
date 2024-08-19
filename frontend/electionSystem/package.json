@@ -15,6 +15,19 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@material-tailwind/react": "^2.1.9",
     "@stream-io/video-react-sdk": "^1.2.20",
+
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    
+    "react": "^18.3.1",
+   
+   ,
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
+
     "@stripe/react-stripe-js": "^2.8.0",
     "@stripe/stripe-js": "^4.3.0",
     "axios": "^1.7.4",
@@ -25,6 +38,7 @@
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.26.0",
     "socket.io-client": "^4.7.5"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -32,12 +46,17 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.10",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.8.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+
     "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.9",
+
     "react-router-dom": "^6.26.0",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.0"

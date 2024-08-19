@@ -1,9 +1,19 @@
+
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
 } from "react-router-dom";
+
+
+
+
+import Home from "./Pages/Home";
+import HeaderM from "./Components/HeaderM";
+import Footer from "./Components/Footer";
+
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 // import SignUp from './components/signup';
 import Login from './components/login';
@@ -12,6 +22,7 @@ import NationalIdForm from './components/nationalidform';
 import OTPForm from './components/otpform';
 import UserDataForm from './components/userdataform';
 import ChatBot from './components/chatbot';
+
 
 import UserMessages from './pages/usermessages';
 import AdvertisementPopup from "./sharedComponants/AdvertisementPopup";
@@ -34,18 +45,23 @@ import BackStageStream from "./components/streamComponent/BackstageStream";
 import SpecifyRequest from "./pages/SpecifyRequest";
 import CheckOutCandidate from "./pages/CheckOutCandidate";
 import CandidatePayment from "./pages/CandidatePayment";
-import Header from "./pages/Header";
+
+import Header from "./Pages/Header";
+
 
 import AddLocalList from './pages/AddLocalList';
 import LocalOrParty from './pages/LocalOrParty';
 import AddPartyList from './pages/AddPartyList';
 
 
+
 function App() {
   return (
+    <>
     <Router>
       <div>
-      <Header/>
+        <Header />
+        <HeaderM />
         <Routes>
           {/* Existing routes */}
           {/* <Route path="/signup" element={<SignUp />} /> */}
@@ -54,20 +70,25 @@ function App() {
           <Route path="/otp" element={<OTPForm />} />
           <Route path="/user-data" element={<UserDataForm />} />
 
+          <Route path="/home" element={<Home />} />
+         
+
+
           <Route path="/" element={<AdminDashboard />} />
         <Route path="/overview" element={<Overview />} />
         <Route path="/user-management" element={<UserManagement />} />
         <Route path="/election-management" element={<ElectionManagement />} />
           <Route 
             path="/chat" 
+
             element={
               <ProtectedRoute>
                 <ChatPopup />
               </ProtectedRoute>
-            } 
+            }
           />
           <Route path="/" element={<Navigate to="/national-id" replace />} />
-                  <Route path="/SpecifyRequest" element={<SpecifyRequest />} />
+          <Route path="/SpecifyRequest" element={<SpecifyRequest />} />
           <Route path="/CheckOutCandidate" element={<CheckOutCandidate />} />
           <Route path="/CandidatePayment" element={<CandidatePayment />} />
           
@@ -85,12 +106,9 @@ function App() {
         </Routes>
       </div>
     </Router>
+    <Footer/>
+    </>
   );
-};
-
-  
-  
-
-
+}
 
 export default App;

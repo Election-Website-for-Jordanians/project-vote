@@ -1,3 +1,94 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  direction: rtl;
+}
+
+.title::before,
+.title::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: #e84545;
+  display: inline-block;
+}
+.title::before {
+  margin: 0 -25px 10px 0;
+}
+.title::after {
+  margin: 0 0 10px -25px;
+}
+.custom-shadow:hover {
+  box-shadow: 0 10px 16px #e8454580;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.flip {
+  transform: rotateY(180deg);
+  transition: transform 1s;
+}
+
+.card {
+  perspective: 1000px;
+}
+
+.animated-border {
+  border-width: 3px;
+  border-style: solid;
+  transition: border-color 1s ease-in-out;
+}
+
+.radial-progress {
+  --size: 6rem;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: inherit;
+  font-size: 1rem;
+}
+
+.radial-progress {
+  --size: 6rem; /* Increase size of the progress circle */
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: inherit;
+  font-size: 1.5rem; /* Increase font size */
+}
+
+animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 6s ease infinite alternate;
+  -moz-animation: animatedgradient 6s ease infinite alternate;
+  animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
