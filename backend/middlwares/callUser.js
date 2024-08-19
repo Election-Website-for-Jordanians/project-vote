@@ -21,19 +21,23 @@ const createUserToken = async (req, res, next) => {
     role: "admin",
     name: secondDebatorName,
   };
-  const timestamp = dayjs(dateOfDebate).unix();
+  console.log(dateOfDebate);
+  const exp = dayjs(dateOfDebate).unix();
+  const iat = dayjs().unix();
   await client.upsertUsers({
     users: { [user.id]: user, [secondUser.id]: secondUser },
   });
   const makerToken = client.createCallToken(
     { user_id: user.id, role: "admin" },
     [],
-    timestamp
+    exp,
+    iat
   );
   const secondDebator = client.createCallToken(
     { user_id: secondDebatorID, role: "admin" },
     [],
-    timestamp
+    exp,
+    iat
   );
   req.tokens = { makerToken, secondDebator };
   next();

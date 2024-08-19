@@ -33,7 +33,7 @@ import UserManagement from './pages/UserManagement';
 import ElectionManagement from './pages/ElectionManagement';
 import AdvertisementPopup from "./sharedComponants/AdvertisementPopup";
 
-// import VotingPercentage from './components/VotingPercentage'; 
+// import VotingPercentage from './components/VotingPercentage';
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("token");
@@ -64,8 +64,7 @@ function App() {
         <Header />
         <HeaderM />
         <Routes>
-          {/* Existing routes */}
-          {/* <Route path="/signup" element={<SignUp />} /> */}
+          <Route path="/" element={<BackStageStream />}></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/national-id" element={<NationalIdForm />} />
           <Route path="/otp" element={<OTPForm />} />
@@ -92,7 +91,7 @@ function App() {
           <Route path="/SpecifyRequest" element={<SpecifyRequest />} />
           <Route path="/CheckOutCandidate" element={<CheckOutCandidate />} />
           <Route path="/CandidatePayment" element={<CandidatePayment />} />
-          
+
           {/* New routes */}
           <Route path="/admin-dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/overview" element={<ProtectedRoute><Overview /></ProtectedRoute>} />

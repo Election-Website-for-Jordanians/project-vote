@@ -2,32 +2,66 @@ import {
   StreamVideoClient,
   StreamVideo,
   StreamCall,
-  useCallStateHooks,
-  ParticipantView,
   StreamTheme,
-  CallControls,
 } from "@stream-io/video-react-sdk";
-import { LivestreamPlayer } from "@stream-io/video-react-sdk";
 import { LivestreamView } from "./liveStreamView";
-import { ViewerStream } from "./ViewerStream/ViewerStream";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const apiKey = "682pm9spe7t3";
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJAc3RyZWFtLWlvL2Rhc2hib2FyZCIsImlhdCI6MTcyMzg5NjU1NCwiZXhwIjoxNzIzOTgyOTU0LCJ1c2VyX2lkIjoiYmFzaWwwIiwicm9sZSI6ImFkbWluIiwiY2FsbF9jaWRzIjpbImxpdmVzdHJlYW06bGl2ZXN0cmVhbV9mYjAzN2FkZS1iMTgzLTQ2Y2YtODBjMi1hODMzZTY0MDBjZDgiXX0.LO-vmlPLUD8X81Trfrqf0vRMKlRpdbndZSZmjQp-MQ0";
-const userId = "basil0";
-const callId = "12379941";
-const user = { id: userId, name: "test" };
 
-const client = new StreamVideoClient({ apiKey, user, token });
-const call = client.call("livestream", callId);
 export default function BackStageStream() {
+  const [passedClient, setClient] = useState();
+  const [passedCall, setCall] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          encodeURI(
+            "http://localhost:4026/api/debates/getDebators?debateID=10&nationalID=1029384756"
+          ),
+          {
+            headers: {
+              authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg0OTI3MzUxNjEiLCJpYXQiOjE3MjM0NjEzODF9.DbcLSU4XSzcKeCgputclDGroqQ3FO_iVg1tFYqWAMOg",
+            },
+          }
+        );
+        console.log(response.data);
+        const debators = response.data.debators.debatorData;
+        const token = response.data.debators.debator.debatorToken;
+        console.log(token);
+        if (debators) {
+          const userId = debators.nationalID;
+          const user = { id: userId, name: debators.name };
+
+          const client = new StreamVideoClient({ apiKey, user, token });
+          setClient(client);
+
+          const callId = 10;
+          const call = client.call("livestream", callId);
+          console.log(passedClient);
+          setCall(call);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <StreamVideo client={client}>
-      <StreamCall call={call}>
-        <StreamTheme>
-          <LivestreamView />
-        </StreamTheme>
-      </StreamCall>
-    </StreamVideo>
+    passedClient &&
+    passedCall && (
+      <StreamVideo client={passedClient}>
+        <StreamCall call={passedCall}>
+          <StreamTheme>
+            <LivestreamView />
+          </StreamTheme>
+        </StreamCall>
+      </StreamVideo>
+    )
   );
 }

@@ -88,8 +88,8 @@ const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
     origin: "*", // Be more specific in production
-    methods: ["GET", "POST"]
-  }
+    methods: ["GET", "POST"],
+  },
 });
 
 require("dotenv").config();
@@ -188,12 +188,18 @@ app.use('/api', districtRoutes);
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(`${new Date().toISOString()} - Error:`, err);
-  res.status(500).json({ success: false, message: 'Internal server error', error: err.message });
+  res.status(500).json({
+    success: false,
+    message: "Internal server error",
+    error: err.message,
+  });
 });
 
 const PORT = process.env.PORT || 4026;
 server.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
+  console.log("Environment variables:", process.env);
+
   console.log('Environment variables:', process.env);
 });
 

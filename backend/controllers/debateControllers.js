@@ -43,27 +43,26 @@ exports.getDebates = async (req, res) => {
 };
 
 exports.getDebators = async (req, res) => {
-  const { debateID } = req.query;
+  const { debateID, nationalID } = req.query;
   try {
-    const debators = await Debators.findAll({
+    const debator = await Debators.findOne({
       where: {
         debateID: debateID,
+        debatorID: nationalID,
       },
     });
-    const debateMaker = await Citizen.findOne({
+    const debatorData = await Citizen.findOne({
       where: {
-        nationalID: debators[0].debatorID,
+        nationalID: nationalID,
       },
     });
 
-    const secondDebator = await Citizen.findOne({
-      where: {
-        nationalID: debators[1].debatorID,
-      },
-    });
     res.json({
       message: "Retrieved deators successfully",
-      debators: [debateMaker, secondDebator, ...debators],
+      debators: {
+        debatorData: debatorData,
+        debator: debator,
+      },
     });
   } catch (e) {
     res.json({ errorMessage: "Failed to retrieve debators", error: e });
