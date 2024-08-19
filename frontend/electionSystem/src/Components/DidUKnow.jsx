@@ -185,7 +185,7 @@ const DidYouKnow = () => {
 
   return (
     <>
-      <div className="wrapper flex flex-col lg:flex-row gap-4 mb-10">
+      <div className="wrapper flex flex-col lg:flex-row gap-4 mb-10 px-10">
         <div className="border-2 border-red-500 rounded-lg p-4 w-full lg:w-96 h-[25rem] overflow-hidden">
           <h2 className="text-red-500 font-bold text-xl mb-6 text-center">
             هل كنت تعلم{" "}
@@ -215,7 +215,7 @@ const DidYouKnow = () => {
           </div>
         </div>
         <section className="w-full lg:w-9/12">
-          <p className="text-wrap text-left text-base sm:text-lg md:text-2xl leading-8 h-fit">
+          <blockquote className="text-wrap text-left text-base sm:text-lg md:text-2xl leading-8 h-fit ">
             تأسست الهيئة المستقلة للانتخاب عام 2012 كجهة مستقلة تعنى بإدارة
             العملية الانتخابية والإشراف عليها دون تدخل أو تأثير من أي جهة, وتعد
             الهيئة إحدى ثمرات الإصلاح السياسي في المملكة الأردنية الهاشمية
@@ -236,7 +236,7 @@ const DidYouKnow = () => {
             الفرعية، وانتخابات المجالس البلدية ومجلس أمانة عمان الكبرى والتي
             نفذتها الحكومة في شهر آب 2013. قانون الهيئة المستقلة للانتخاب رقم
             (11) لسنة (2012).
-          </p>
+          </blockquote>
         </section>
       </div>
     </>

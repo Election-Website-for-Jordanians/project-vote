@@ -11,6 +11,9 @@ import ChatPopup from "./components/chatpopup";
 import NationalIdForm from "./components/nationalidform";
 import OTPForm from "./components/otpform";
 import UserDataForm from "./components/userdataform";
+import Home from "./Pages/Home";
+import HeaderM from "./Components/HeaderM";
+import Footer from "./Components/Footer";
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -23,21 +26,21 @@ const ProtectedRoute = ({ children }) => {
 import SpecifyRequest from "./pages/SpecifyRequest";
 import CheckOutCandidate from "./pages/CheckOutCandidate";
 import CandidatePayment from "./pages/CandidatePayment";
-import Header from "./pages/Header";
-
+import Header from "./Pages/Header";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
+    <>
     <Router>
       <div>
         <Header />
+        <HeaderM />
         <Routes>
           {/* <Route path="/signup" element={<SignUp />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/national-id" element={<NationalIdForm />} />
           <Route path="/otp" element={<OTPForm />} />
           <Route path="/user-data" element={<UserDataForm />} />
+          <Route path="/home" element={<Home />} />
           <Route
             path="/chat"
             element={
@@ -53,6 +56,8 @@ function App() {
         </Routes>
       </div>
     </Router>
+    <Footer/>
+    </>
   );
 }
 

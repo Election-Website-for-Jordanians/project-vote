@@ -45,7 +45,7 @@ html {
 }
 
 .radial-progress {
-  --size: 3rem;
+  --size: 6rem;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;

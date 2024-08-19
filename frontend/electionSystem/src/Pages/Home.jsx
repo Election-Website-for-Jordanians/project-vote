@@ -1,6 +1,6 @@
 import React from "react";
 import Counter from "../Components/Counter";
-import VotingPercentage from "../Components/VotingPercentage";
+import VotingPercentage from "../Components/VotingPercentageM";
 import Hero from "../Components/Hero";
 import StudyComponent from "../Components/iframe";
 import Faq from "../Components/FAQ";

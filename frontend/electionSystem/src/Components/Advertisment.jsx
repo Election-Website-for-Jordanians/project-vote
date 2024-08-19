@@ -46,7 +46,7 @@ function Advertisment() {
     <section className="bg-white pb-10 dark:bg-dark lg:pb-20 lg:pt-[120px]">
       <div className="container mx-auto px-4">
         <div className="-mx-4 flex flex-wrap justify-center items-center">
-          <div className="w-full px-4">
+          <div className="w-full ">
             <div className="mx-auto mb-[60px] max-w-[485px] text-center flex flex-col">
               <h2
                 className="title relative text-2xl md:text-3xl font-bold text-center before after my-8 mx-4 md:my-10 md:mx-6"
@@ -64,15 +64,15 @@ function Advertisment() {
           </button>
         </div>
 
-        <Slider className="flex justify-center gap-2 md:gap-4" {...settings}>
+        <Slider className="flex justify-center gap-10 md:gap-4" {...settings}>
           {["دائرة الزرقاء", "دائرة الزرقاء", "دائرة الزرقاء"].map(
             (title, index) => (
-              <div className="wrapper px-2" key={index}>
+              <div className="wrapper mx-8" key={index}>
                 <div
-                  className="card bg-base-100 w-full sm:w-[18rem] md:w-[24rem] lg:w-[28rem] shadow-xl border-2 transition-all"
+                  className="card  bg-base-100 w-full sm:w-[18rem] md:w-[24rem] lg:w-[28rem] shadow-xl border-2 transition-all"
                   style={getGradientStyle("red", "black", "green")}
                 >
-                  <figure className="pt-6">
+                  <figure className=" p-6 pr-12">
                     <img
                       src="https://www.iec.jo/sites/default/files/styles/d10_standard/public/images/2024-08/whatsapp_image_2024-08-13_at_6.14.18_pm.jpeg?h=09deafb6&itok=IKuP_Ech"
                       alt="Shoes"
