@@ -54,6 +54,7 @@ router.get('/users', getAllUsers);
 
 // مسار لتحديث البريد الإلكتروني لمستخدم معين باستخدام nationalID
 router.put('/api/users/:nationalID', updateUserEmail); //اول سي بالباث من السيرفر app.use('/test', userdata);//duaa /test
+
 // للحصول على عدد المقترعين محلي وحزبي 
 router.get('/votingstats', getVotingStats); 
 //مسار للحصول على  عدد المرشحين 
@@ -63,10 +64,6 @@ router.get('/candidate',getnumcandidate)
 // const { getPaidAdvertisements } = require('../controllers/dashadvertisingcontroller');
 // // مسار لجلب الإعلانات المدفوعة
 // router.get('/paid-ads', getPaidAdvertisements);
-
-
-
-
 
 
 // router.put('/api/users/:nationalID', async (req, res) => {

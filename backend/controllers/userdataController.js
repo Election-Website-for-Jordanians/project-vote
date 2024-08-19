@@ -207,7 +207,7 @@
 //   updateUserEmail,
 //   getVotingStats, // تأكد من إضافة الدالة هنا
 // };
-//----------------------------------------------------------------------------------------------------------------
+
 
 
 const { where } = require('sequelize');
@@ -253,24 +253,24 @@ const updateUserEmail = async (req, res) => {
 };
 
 // دالة لجلب إحصاءات التصويت
-const getVotingStats = async (req, res) => {
-  try {
-    // الحصول على عدد الأشخاص الذين قاموا بالتصويت محليًا
-    const localVoteCount = await Citizen.count({
-      where: { didVoteLocal: true }
-    });
+// const getVotingStats = async (req, res) => {
+//   try {
+//     // الحصول على عدد الأشخاص الذين قاموا بالتصويت محليًا
+//     const localVoteCount = await Citizen.count({
+//       where: { didVoteLocal: true }
+//     });
 
-    // الحصول على عدد الأشخاص الذين قاموا بالتصويت حزبيًا
-    const partyVoteCount = await Citizen.count({
-      where: { didVoteParty: true }
-    });
+//     // الحصول على عدد الأشخاص الذين قاموا بالتصويت حزبيًا
+//     // const partyVoteCount = await Citizen.count({
+//     //   where: { didVoteParty: true }
+//     // });
 
-    return res.status(200).json({ localVoteCount, partyVoteCount });
-  } catch (error) {
-    console.error('Error fetching voting stats:', error);
-    return res.status(500).json({ error: 'Internal Server Error' });
-  }
-};
+//     return res.status(200).json({ localVoteCount, partyVoteCount });
+//   } catch (error) {
+//     console.error('Error fetching voting stats:', error);
+//     return res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// };
 
 // الحصول على عدد المرشحين 
 const getnumcandidate = async (req,res) =>{
@@ -306,9 +306,11 @@ const getnumcandidate = async (req,res) =>{
 
 module.exports = {
   getAllUsers,
+
   updateUserEmail,
   getVotingStats, 
   getnumcandidate,
+
 };
 
 
