@@ -13,6 +13,7 @@ const partyRoutes = require('./routes/partyRoutes'); //duaa
 const userdata = require ('./routes/userdataRoutes.js')//duaaconst bodyParser = require('body-parser'); 
 const LocalList = require('./routes/LocalList.js');const adminRoutes = require('./routes/adminroutes');
 
+const debateRoutes=require("./routes/debateRoutes.js");
 
 const app = express();
 
@@ -78,6 +79,7 @@ app.use('/votingresult', partyRoutes);//duaa
 app.use('/test', userdata);//duaa
 app.use('/api', districtRoutes); //duaadistrictapp.use("/api/admin", adminRoutes);
 
+app.use("/api/debates",debateRoutes)
 
 // Error handling middleware
 app.use((err, req, res, next) => {
