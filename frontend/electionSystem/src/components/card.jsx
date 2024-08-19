@@ -53,42 +53,42 @@
 
 // Card.jsx
 
-// const Card = ({ title, value, subtitle, icon }) => (
-//   <div className="bg-white rounded-lg shadow-md p-6 mb-4 w-full max-w-sm mx-auto">
-//     <div className="flex items-center justify-between mb-4">
-//       <h3 className="text-lg font-semibold">{title}</h3>
-//       {icon}
-//     </div>
-//     <div className="text-3xl font-bold">{value}</div>
-//     <p className="text-sm text-gray-500">{subtitle}</p>
+const Card = ({ title, value, subtitle, icon }) => (
+  <div className="bg-white rounded-lg shadow-md p-6 mb-4 w-full max-w-sm mx-auto">
+    <div className="flex items-center justify-between mb-4">
+      <h3 className="text-lg font-semibold">{title}</h3>
+      {icon}
+    </div>
+    <div className="text-3xl font-bold">{value}</div>
+    <p className="text-sm text-gray-500">{subtitle}</p>
+  </div>
+);
+
+export default Card;
+
+// import React from 'react';
+
+// export const Card = ({ children }) => (
+//   <div className="border rounded-lg shadow-md p-4 bg-white">
+//     {children}
 //   </div>
 // );
 
-// export default Card;
+// export const CardHeader = ({ children, className }) => (
+//   <div className={`border-b pb-2 mb-2 ${className}`}>
+//     {children}
+//   </div>
+// );
 
-import React from 'react';
+// export const CardContent = ({ children }) => (
+//   <div className="pt-2">
+//     {children}
+//   </div>
+// );
 
-export const Card = ({ children }) => (
-  <div className="border rounded-lg shadow-md p-4 bg-white">
-    {children}
-  </div>
-);
-
-export const CardHeader = ({ children, className }) => (
-  <div className={`border-b pb-2 mb-2 ${className}`}>
-    {children}
-  </div>
-);
-
-export const CardContent = ({ children }) => (
-  <div className="pt-2">
-    {children}
-  </div>
-);
-
-export const CardTitle = ({ children, className }) => (
-  <h2 className={`text-lg font-semibold ${className}`}>
-    {children}
-  </h2>
-);
+// export const CardTitle = ({ children, className }) => (
+//   <h2 className={`text-lg font-semibold ${className}`}>
+//     {children}
+//   </h2>
+// );
 

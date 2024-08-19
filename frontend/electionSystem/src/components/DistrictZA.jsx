@@ -20,7 +20,7 @@ const DistrictVotingPercentage = ({ districtName }) => {
 
   return (
     <div>
-      <h2>Voting Percentage for District {districtName}</h2>
+      <h2>الزرقاء {districtName}</h2>
       {error ? (
         <p>{error}</p>
       ) : (
