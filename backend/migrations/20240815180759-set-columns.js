@@ -5,7 +5,6 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.dropTable("partyListingRequests");
     await queryInterface.dropTable("LocalListingRequests");
-    await queryInterface.removeConstraint("Advertisments", "advertisorID");
     
 
     await queryInterface.removeColumn("Advertisments", "advertisorID");
