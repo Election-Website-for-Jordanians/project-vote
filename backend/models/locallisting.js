@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       listingID: {
         primaryKey: true,
-        autoIncrement: true,
         allowNull: false,
+        autoIncrement: true,
         type: DataTypes.INTEGER,
       },
       Name: {
@@ -27,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
       votingCount: {
         type: DataTypes.INTEGER,
         defaultValue: 0,
+      },
+      didPass: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
       isApproved: {
         type: DataTypes.BOOLEAN,

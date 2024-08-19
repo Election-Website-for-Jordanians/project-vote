@@ -3,13 +3,20 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Debators", {
-      debatorID: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      
+      debatorID: {
+        type: Sequelize.STRING,
+        references: {
+          key: "nationalID",
+          model: "Citizens",
+        },
+      },
+
       debatorToken: {
         type: Sequelize.STRING,
       },

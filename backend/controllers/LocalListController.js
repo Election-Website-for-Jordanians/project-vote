@@ -6,6 +6,7 @@ const { Op, where, Sequelize } = require('sequelize');
 /****************create Local Listing****************** */
 exports.createLocalListing = async (req, res) => {
   try {
+
     // 1. إنشاء دائرة جديدة
     const localList = await LocalListing.create(req.body);
     res.status(201).json({
@@ -19,6 +20,7 @@ exports.createLocalListing = async (req, res) => {
       console.error('Error creating local listing :', error);
       res.status(500).json({ error: 'Error creating local listing ' });
     }
+
   }
 };
 

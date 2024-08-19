@@ -2,20 +2,24 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class PartyListingInformation extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      // Add these associations
+      PartyListingInformation.belongsTo(models.Citizen, { foreignKey: 'nationalID' });
+      PartyListingInformation.belongsTo(models.PartyListing, { foreignKey: 'partyListingID' });
     }
   }
   PartyListingInformation.init(
+    
     {
+        partyInformationID: {  // This should be your primary key
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          autoIncrement: true,
+          allowNull: false
+        },
       nationalID: {
         type: DataTypes.STRING,
-        references: { model: "Candidates", key: "candidateID" },
+        references: { model: "Citizen", key: "nationalID" },
       },
       gender: DataTypes.STRING,
       candidacyCourse: DataTypes.STRING,
@@ -23,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         references: { model: "PartyListing", key: "partyID" },
       },
+      
       profilePicture: { type: DataTypes.STRING },
     },
     {

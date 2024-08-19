@@ -4,6 +4,7 @@ import axios from '../components/axios';
 
 const NationalIdForm = () => {
   const [nationalID, setNationalId] = useState('');
+  const [verificationType, setVerificationType] = useState('email');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -23,12 +24,11 @@ const NationalIdForm = () => {
     setError('');
     try {
       console.log('Submitting national ID:', nationalID);
-      const response = await axios.post('/api/auth/check-id', { nationalID });
+      const response = await axios.post('/api/auth/check-id', { nationalID, verificationType });
       console.log('Response:', response.data);
       if (response.data.success) {
-        navigate('/otp', { state: { nationalID } });
+        navigate('/otp', { state: { nationalID, verificationType } });
       } else if (response.data.alreadySignedUp) {
-        // If the user has already signed up, redirect to login
         alert('لقد قمت بالتسجيل مسبقاً. سيتم تحويلك إلى صفحة تسجيل الدخول.');
         navigate('/login');
       }
@@ -42,18 +42,25 @@ const NationalIdForm = () => {
     <div className={sharedStyles.pageContainer}>
       <div className={sharedStyles.formContainer}>
         <h2 className={sharedStyles.title}>أدخل رقمك الوطني</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="nationalId" className="block text-sm font-medium text-gray-700 mb-1">رقم الهوية الوطنية</label>
-            <input
-              id="nationalId"
-              type="text"
-              value={nationalID}
-              onChange={(e) => setNationalId(e.target.value)}
-              placeholder="أدخل رقم الهوية الوطنية الخاص بك"
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={nationalID}
+            onChange={(e) => setNationalId(e.target.value)}
+            placeholder="أدخل رقم الهوية الوطنية الخاص بك"
+            className={sharedStyles.input}
+            required
+          />
+          <div className="mb-4">
+            <label className="block mb-2">طريقة التحقق:</label>
+            <select
+              value={verificationType}
+              onChange={(e) => setVerificationType(e.target.value)}
               className={sharedStyles.input}
-              required
-            />
+            >
+              <option value="email">البريد الإلكتروني</option>
+              <option value="phone">رقم الهاتف</option>
+            </select>
           </div>
           <button type="submit" className={sharedStyles.button}>
             إرسال
