@@ -28,7 +28,10 @@
     "pg": "^8.12.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.3",
-    "stripe": "^16.8.0"
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "stripe": "^16.8.0",
+    "twilio": "^5.2.2"
   },
   "devDependencies": {
     "sequelize-auto-migrations": "^1.0.3",

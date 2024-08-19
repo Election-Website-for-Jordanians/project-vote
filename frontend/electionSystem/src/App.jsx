@@ -11,11 +11,11 @@ import ChatPopup from './components/chatpopup';
 import NationalIdForm from './components/nationalidform';
 import OTPForm from './components/otpform';
 import UserDataForm from './components/userdataform';
-import AdminDashboard from './components/admindashboard'; // Import the new components
-import Overview from './components/otpform';
-import UserManagement from './components/usermangment';
-import ElectionManagement from './components/electionmanagment';
+import ChatBot from './components/chatbot';
 
+import UserMessages from './pages/usermessages';
+import AdvertisementPopup from "./sharedComponants/AdvertisementPopup";
+import Privacy from "./pages/Privacy";
 import AdminDashboard from './pages/AdminDashboard';
 import Overview from './pages/Overview';
 import UserManagement from './pages/UserManagement';
@@ -74,13 +74,14 @@ function App() {
           {/* New routes */}
           <Route path="/admin-dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/overview" element={<ProtectedRoute><Overview /></ProtectedRoute>} />
-          <Route path="/user-management" element={<ProtectedRoute><UserManagement /></ProtectedRoute>} />
+          <Route path="/usermessages" element={<ProtectedRoute><UserMessages /></ProtectedRoute>} />
           <Route path="/election-management" element={<ProtectedRoute><ElectionManagement /></ProtectedRoute>} />
           <Route path="/Privacy" element={<Privacy />} />
           <Route path="/AdvertisementPopup" element={<AdvertisementPopup />} />
           <Route path="/AddLocalList" element={<AddLocalList />} />
           <Route path="/LocalOrParty" element={<LocalOrParty />} />
           <Route path="/AddPartyList" element={<AddPartyList />} />
+          <Route path="/chatbot" element={<ChatBot />} />
         </Routes>
       </div>
     </Router>
