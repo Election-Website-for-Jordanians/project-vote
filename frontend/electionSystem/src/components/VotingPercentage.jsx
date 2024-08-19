@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import CirclePercentage from './CirclePercentage'; // تأكد أن هذا المسار صحيح، بناءً على مكان وجود مكون CirclePercentage في مشروعك
+import CirclePercentage from '../components/CirclePercentage'; // تأكد أن هذا المسار صحيح، بناءً على مكان وجود مكون CirclePercentage في مشروعك
 
 const VotingPercentage = () => {
   const [percentage, setPercentage] = useState(null);

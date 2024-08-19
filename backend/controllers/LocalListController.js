@@ -4,13 +4,26 @@ const { LocalListing, localListingInformation,Citizen } = require('../models');
 exports.createLocalListing = async (req, res) => {
 
   try {
-    // 1. إنشاء دائرة جديدة
-    const localList = await LocalListing.create(req.body);
-    res.status(201).json({
-      message: 'Local listing created successfully',localListId: localList.listingID
-    });
+    // 1. إنشاء قائمة جديدة
+
+const { listingID, ...newLocalListingData } = req.body;
+
+try {
+  
+  const localList = await LocalListing.create(newLocalListingData);
+
+  
+  res.status(201).json({
+    message: 'Local listing created successfully',
+    localListId: localList.listingID,
+  });
+} catch (error) {
+  console.error('Error creating local listing:', error);
+  res.status(500).json({ message: 'Error creating local listing', error });
+}
 
   } catch (error) {
+    
     console.error('Error creating local listing :', error);
     res.status(500).json({ error: 'Error creating local listing ' });
   }
