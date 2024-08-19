@@ -31,6 +31,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import Overview from './pages/Overview';
 import UserManagement from './pages/UserManagement';
 import ElectionManagement from './pages/ElectionManagement';
+import AdvertisementPopup from "./sharedComponants/AdvertisementPopup";
 
 // import VotingPercentage from './components/VotingPercentage'; 
 // Protected Route Component

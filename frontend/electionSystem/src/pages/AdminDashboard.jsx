@@ -147,52 +147,185 @@
 // };
 
 // export default AdminDashboard;
+//---------------------------------------------------------------------------------------
+// import { useState } from 'react';
+// import Overview from './Overview';
+// import UserManagement from './UserManagement';
+// import ElectionManagement from './ElectionManagement';
+// // import cyrcle from '../components/CirclePercentage';
+// // قم بإضافة استيراد الكود المطلوب لرسمة الدوائر هنا
+
+// const AdminDashboard = () => {
+//   const [activeTab, setActiveTab] = useState('overview');
+
+//   return (
+//     <div className="p-8">
+//       {/* تعديل لتوسيط التبويبات */}
+//       <div className="flex justify-center space-x-4 mb-6">
+//         <button
+//           className={`px-4 py-2 font-semibold rounded-md ${activeTab === 'overview' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+//           onClick={() => setActiveTab('overview')}
+//         >
+//           الصفحة الرئيسية
+//         </button>
+//         <button
+//           className={`px-4 py-2 font-semibold rounded-md ${activeTab === 'user-management' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+//           onClick={() => setActiveTab('user-management')}
+//         >
+//           إدارة المستخدمين
+//         </button>
+//         <button
+//           className={`px-4 py-2 font-semibold rounded-md ${activeTab === 'election-management' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+//           onClick={() => setActiveTab('election-management')}
+//         >
+//           إدارة الانتخابات
+//         </button>
+//         {/* يمكنك إعادة تفعيل الكارد إذا كان له ضرورة */}
+//         {/* <button
+//           className={`px-4 py-2 font-semibold rounded-md ${activeTab === 'card' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+//           onClick={() => setActiveTab('card')}
+//         >
+//           الكارد
+//         </button> */}
+//       </div>
+//       <div>
+//         {activeTab === 'overview' && <Overview />}
+//         {activeTab === 'user-management' && <UserManagement />}
+//         {activeTab === 'election-management' && <ElectionManagement />}
+//         {/* {activeTab === 'card' && <Card title="مثال كارد" value="100" subtitle="توضيح" icon={<svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8h18M3 12h18m-7 4h7" /></svg>} />} */}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default AdminDashboard;
+//---------------------------------------------------------------------------------------
+// import { useState } from 'react';
+// import Overview from './Overview';
+// import UserManagement from './UserManagement';
+// import ElectionManagement from './ElectionManagement';
+// // import cyrcle from '../components/CirclePercentage'; // قم بإضافة استيراد الكود المطلوب لرسمة الدوائر هنا
+
+// const AdminDashboard = () => {
+//   const [activeTab, setActiveTab] = useState('overview');
+
+//   return (
+//     <div className="flex h-screen">
+//       {/* Sidebar */}
+//       <aside className="w-64 bg-black text-white p-6 flex-shrink-0">
+//         <h2 className="text-2xl font-bold mb-6 text-red-500">لوحة التحكم</h2>
+//         <nav>
+//           <ul>
+//             <li className="mb-4">
+//               <button
+//                 className={`w-full text-left px-4 py-2 font-semibold rounded-md ${activeTab === 'overview' ? 'bg-red-500 text-white' : 'bg-gray-800 text-gray-300'}`}
+//                 onClick={() => setActiveTab('overview')}
+//               >
+//                 الصفحة الرئيسية
+//               </button>
+//             </li>
+//             <li className="mb-4">
+//               <button
+//                 className={`w-full text-left px-4 py-2 font-semibold rounded-md ${activeTab === 'user-management' ? 'bg-red-500 text-white' : 'bg-gray-800 text-gray-300'}`}
+//                 onClick={() => setActiveTab('user-management')}
+//               >
+//                 إدارة المستخدمين
+//               </button>
+//             </li>
+//             <li className="mb-4">
+//               <button
+//                 className={`w-full text-left px-4 py-2 font-semibold rounded-md ${activeTab === 'election-management' ? 'bg-red-500 text-white' : 'bg-gray-800 text-gray-300'}`}
+//                 onClick={() => setActiveTab('election-management')}
+//               >
+//                 إدارة الانتخابات
+//               </button>
+//             </li>
+//             {/* يمكنك إعادة تفعيل الكارد إذا كان له ضرورة */}
+//             {/* <li className="mb-4">
+//               <button
+//                 className={`w-full text-left px-4 py-2 font-semibold rounded-md ${activeTab === 'card' ? 'bg-red-500 text-white' : 'bg-gray-800 text-gray-300'}`}
+//                 onClick={() => setActiveTab('card')}
+//               >
+//                 الكارد
+//               </button>
+//             </li> */}
+//           </ul>
+//         </nav>
+//       </aside>
+
+//       {/* Main Content */}
+//       <main className="flex-1 p-8 bg-gray-100">
+//         {activeTab === 'overview' && <Overview />}
+//         {activeTab === 'user-management' && <UserManagement />}
+//         {activeTab === 'election-management' && <ElectionManagement />}
+//         {/* {activeTab === 'card' && <Card title="مثال كارد" value="100" subtitle="توضيح" icon={<svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8h18M3 12h18m-7 4h7" /></svg>} />} */}
+//       </main>
+//     </div>
+//   );
+// };
+
+// export default AdminDashboard;
+//----------------------------------------------------------------------------------------
 import { useState } from 'react';
 import Overview from './Overview';
 import UserManagement from './UserManagement';
 import ElectionManagement from './ElectionManagement';
-// import cyrcle from '../components/CirclePercentage';
-// قم بإضافة استيراد الكود المطلوب لرسمة الدوائر هنا
+// import cyrcle from '../components/CirclePercentage'; // قم بإضافة استيراد الكود المطلوب لرسمة الدوائر هنا
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
 
   return (
-    <div className="p-8">
-      {/* تعديل لتوسيط التبويبات */}
-      <div className="flex justify-center space-x-4 mb-6">
-        <button
-          className={`px-4 py-2 font-semibold rounded-md ${activeTab === 'overview' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700'}`}
-          onClick={() => setActiveTab('overview')}
-        >
-          الصفحة الرئيسية
-        </button>
-        <button
-          className={`px-4 py-2 font-semibold rounded-md ${activeTab === 'user-management' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700'}`}
-          onClick={() => setActiveTab('user-management')}
-        >
-          إدارة المستخدمين
-        </button>
-        <button
-          className={`px-4 py-2 font-semibold rounded-md ${activeTab === 'election-management' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700'}`}
-          onClick={() => setActiveTab('election-management')}
-        >
-          إدارة الانتخابات
-        </button>
-        {/* يمكنك إعادة تفعيل الكارد إذا كان له ضرورة */}
-        {/* <button
-          className={`px-4 py-2 font-semibold rounded-md ${activeTab === 'card' ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-700'}`}
-          onClick={() => setActiveTab('card')}
-        >
-          الكارد
-        </button> */}
-      </div>
-      <div>
+    <div className="flex h-screen">
+      {/* Sidebar */}
+      <aside className="w-72 bg-red-500 text-white p-6 flex-shrink-0">
+        <h2 className="text-2xl font-bold mb-6">لوحة التحكم</h2>
+        <nav>
+          <ul>
+            <li className="mb-4">
+              <button
+                className={`w-full text-left px-4 py-2 font-semibold rounded-md ${activeTab === 'overview' ? 'bg-white text-red-500' : 'bg-red-600 text-white'}`}
+                onClick={() => setActiveTab('overview')}
+              >
+                الصفحة الرئيسية
+              </button>
+            </li>
+            <li className="mb-4">
+              <button
+                className={`w-full text-left px-4 py-2 font-semibold rounded-md ${activeTab === 'user-management' ? 'bg-white text-red-500' : 'bg-red-600 text-white'}`}
+                onClick={() => setActiveTab('user-management')}
+              >
+                إدارة المستخدمين
+              </button>
+            </li>
+            <li className="mb-4">
+              <button
+                className={`w-full text-left px-4 py-2 font-semibold rounded-md ${activeTab === 'election-management' ? 'bg-white text-red-500' : 'bg-red-600 text-white'}`}
+                onClick={() => setActiveTab('election-management')}
+              >
+                إدارة الانتخابات
+              </button>
+            </li>
+            {/* يمكنك إعادة تفعيل الكارد إذا كان له ضرورة */}
+            {/* <li className="mb-4">
+              <button
+                className={`w-full text-left px-4 py-2 font-semibold rounded-md ${activeTab === 'card' ? 'bg-white text-red-500' : 'bg-red-600 text-white'}`}
+                onClick={() => setActiveTab('card')}
+              >
+                الكارد
+              </button>
+            </li> */}
+          </ul>
+        </nav>
+      </aside>
+
+      {/* Main Content */}
+      <main className="flex-1 p-8 bg-gray-100">
         {activeTab === 'overview' && <Overview />}
         {activeTab === 'user-management' && <UserManagement />}
         {activeTab === 'election-management' && <ElectionManagement />}
         {/* {activeTab === 'card' && <Card title="مثال كارد" value="100" subtitle="توضيح" icon={<svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8h18M3 12h18m-7 4h7" /></svg>} />} */}
-      </div>
+      </main>
     </div>
   );
 };
